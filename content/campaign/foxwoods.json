@@ -1,0 +1,75 @@
+{
+  "name": "Foxwoods",
+  "slug": "foxwoods",
+  "description": "Campaign",
+  "thumbnail": "https://www.placecage.com/658/800",
+  "index": "2",
+  "color": "#67C183",
+  "message":   {
+    "title": "Hi✌️AdAge.",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor lorem ut lorem lobortis vehicula. Cras vitae magna non mi posuere varius. Sed sit amet maximus nisl. Donec ornare, diam."
+  },
+  "content": [
+    {
+      "type": "video",
+      "data": {
+        "src": "https://vimeo.com/541765747/b0252b5dcf"
+      }
+    },
+    {
+      "type": "project",
+      "data": {
+        "campaign": "Campaign 3",
+        "title": "Waffle Stop",
+        "description": "Waffle Stop Campaign",
+        "image": "https://placebeard.it/1379/790"
+      }
+    },
+    {
+      "type": "largeText",
+      "data": {
+        "title": "Lorem ipsum dolor sit amet, consectetur exalta adipiscing elit auctor lorem ut lobortis vehicula."
+      }
+    },
+    {
+      "type": "smallText",
+      "data": {
+        "title": "Lorem ipsum dolor sit amet, consectetur exalta adipiscing elit auctor lorem ut lobortis vehicula."
+      }
+    },
+    {
+      "type": "results",
+      "data": {
+        "items": [
+          {
+            "headline": "Increase In Sales",
+            "info": "36 Million"
+          },
+          {
+            "headline": "Increase In Sales",
+            "info": "36 Million"
+          },
+          {
+            "headline": "Increase In Sales",
+            "info": "36 Million"
+          }
+        ]
+      }
+    },
+    {
+      "type": "imagesGallery",
+      "data": {
+        "items": [
+          {
+            "image": "https://www.placecage.com/1379/790",
+            "caption": "caption"
+          },
+          {
+            "image": "https://www.placecage.com/658/800",
+            "caption": "caption"
+          }
+        ]
+      }
+    }
+  ]
+}

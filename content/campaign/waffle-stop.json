@@ -1,0 +1,64 @@
+{
+  "name": "Waffle Stop",
+  "slug": "waffle-stop",
+  "description": "Campaign",
+  "thumbnail": "/img/Thumb-Waffle.jpg",
+  "index": "1",
+  "color": "#3989C3",
+  "message":   {
+    "title": "Unifying America. <span>One waffle at a time.</span>",
+    "paragraph": "<p>Capitalizing on the irreverent tone of voice Waffle Stop is known for, Red Square created a social media campaign that lived at the center of an incredible cultural moment. One nation, under waffles.</p><p>Scroll down to check out the results.</p>"
+  },
+  "content": [
+    {
+      "type": "project",
+      "data": {
+        "campaign": "Campaign 2",
+        "title": "Waffle Stop",
+        "description": "Waffle Stop Campaign",
+        "image": "/img/waffle-abarth-landscape.jpg"
+      }
+    },
+    {
+      "type": "largeText",
+      "data": {
+        "title": "Waffle Stop was busier October 2020 at 50% dining room capacity than the previous year at 100%. <div class='break'>Social media was the key driver of website traffic growth during the campaign period.</div>"
+      }
+    },
+    {
+      "type": "imagesGallery",
+      "data": {
+        "items": [
+
+          {
+            "image": "/img/waffle-vw.jpg",
+            "caption": "caption"
+          },
+          {
+            "image": "/img/waffle-sign-2.jpg",
+            "caption": "caption"
+          }
+        ]
+      }
+    },
+    {
+      "type": "results",
+      "data": {
+        "items": [
+          {
+            "headline": "Year over year sales grew",
+            "info": "25%"
+          },
+          {
+            "headline": "Growth in Facebook to website visits",
+            "info": "100%"
+          },
+          {
+            "headline": "E-comm sales increase",
+            "info": "89.3%"
+          }
+        ]
+      }
+    }
+  ]
+}

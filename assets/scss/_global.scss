@@ -1,0 +1,97 @@
+html,
+body {
+  height: 100%;
+  background-color: #313131;
+  color: white;
+  font-family: "Monument Grotesk";
+}
+
+:root {
+  font-size: 16px;
+}
+
+#app {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('/img/bg.jpg');
+  background-size: cover;
+
+ .js-locomotive {
+   min-height: 100vh;
+   width: 100%;
+ }
+}
+.container  {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+// .js-locomotive {
+//   overflow: hidden;
+//   box-sizing: border-box;
+//   position: relative;
+//   min-height: 100vh;
+//   will-change: transform;
+//
+//   .scroll {
+//     height: 100%;
+//
+//     will-change: transform;
+//   }
+//
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Circular-Book";
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h1 {
+}
+
+h2 {
+  color: $white;
+}
+
+h3 {
+
+}
+
+h4 {
+}
+
+p {
+}
+
+ul {
+  margin: 0;
+  li {
+    list-style: none;
+  }
+}
+
+* {
+  outline: none;
+
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+
+h2 {
+  text-transform: none;
+  will-change: transform;
+  transform-style: preserve-3d;
+  perspective: 100px;
+
+}

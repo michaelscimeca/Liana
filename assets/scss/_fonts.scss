@@ -1,0 +1,38 @@
+// Circular
+@font-face {
+    font-family: 'Circular-Book';
+    src:url('/fonts/lineto-circular-book.eot');
+    src:url('/fonts/lineto-circular-book.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lineto-circular-book.woff2') format('woff2'),
+        url('/fonts/lineto-circular-book.woff') format('woff');
+}
+
+// Circular - Medium
+@font-face {
+    font-family: 'Circular-Medium';
+    src:url('/fonts/lineto-circular-medium.eot');
+    src:url('/fonts/lineto-circular-medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lineto-circular-medium.woff2') format('woff2'),
+        url('/fonts/lineto-circular-medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Circular - Bold
+@font-face {
+    font-family: 'Circular-Bold';
+    src:url('/fonts/lineto-circular-bold.eot');
+    src:url('/fonts/lineto-circular-bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/lineto-circular-bold.woff2') format('woff2'),
+        url('/fonts/lineto-circular-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'youngserifregular';
+  src: url('/fonts/YoungSerif-Regular.eot');
+	src: url('/fonts/YoungSerif-Regular.woff') format('woff'),
+	url('/fonts/YoungSerif-Regular.ttf') format('truetype'),
+	url('/fonts/YoungSerif-Regular.svg#youngserifregular') format('svg');
+}

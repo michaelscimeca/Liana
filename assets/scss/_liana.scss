@@ -1,0 +1,219 @@
+
+#dots-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 669px;
+  height: 50%;
+  margin: auto;
+  z-index: 2;
+
+  .dot {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .gsapElm {
+    height: 290px;
+    width: 300px;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+
+    &:nth-child(1) {
+      left: -137px;
+      bottom: -36%;
+      .dot {
+        background-image: url('/img/dots.png');
+        left: -137px;
+        bottom: -36%;
+      }
+    }
+
+    &:nth-child(2) {
+      right: 0;
+      bottom: 0%;
+      .dot {
+        background-image: url('/img/dots.png');
+        right: 0;
+        bottom: 0%;
+      }
+    }
+
+    &:nth-child(3) {
+      right: -80px;
+      bottom: -50%;
+      .dot {
+        background-image: url('/img/dots2.png');
+        right: -80px;
+       bottom: -50%;
+      }
+    }
+
+    &:nth-child(4) {
+      left: 0px;
+      top: 34%;
+      .dot {
+        background-image: url('/img/dots.png');
+        right: 0;
+        bottom: 0%;
+      }
+    }
+  }
+
+}
+
+#liana-container {
+  position: relative;
+  height: 1252px;
+  width: 1292px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: -340px;
+
+  #liana-container-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/img/bet.png');
+    background-position: center;
+  }
+
+  #mask {
+    width: 100%;
+    mask-border: url('/img/mask.svg');
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      box-shadow: inset 0em 1em 250px 100px #0a2441;
+    }
+  }
+
+  #liana-box {
+    width: 613px;
+    margin: 0 auto;
+  }
+
+
+  #liana {
+    position: relative;
+    z-index: 3;
+    height: 844px;
+    width: 513px;
+    background-image: url('/img/liana.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -270px;
+      left: 50%;
+      margin-left: -70%;
+      height: 410px;
+      width: 140%;
+      background: #000;
+      filter: blur(58px);
+    }
+  }
+}
+
+@function multiple-box-shadow ($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+
+  @return unquote($value);
+}
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+#stars,
+#stars2,
+#stars3{
+  filter: blur(1px);
+
+}
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+};
+
+
+#star-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 80%;
+  left: 0;
+
+}
