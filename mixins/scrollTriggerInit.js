@@ -1,11 +1,8 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
 export default {
   watch: {
     yScrollVal: function (newVal, oldVal) {
       this.$data.y = newVal;
-      ScrollTrigger.update();
+      this.$ScrollTrigger.update();
     }
   },
   computed: {
@@ -18,7 +15,7 @@ export default {
       this.container = document.querySelector('.js-locomotive .scroll');
       const _this = this;
 
-      ScrollTrigger.scrollerProxy(this.container, {
+      this.$ScrollTrigger.scrollerProxy(this.container, {
         scrollTop (value) {
           return arguments.length ? this.container.scrollTo(value, 0, 0) : _this.y;
         },
@@ -29,7 +26,6 @@ export default {
     }
   },
   mounted: function () {
-    gsap.registerPlugin(ScrollTrigger);
     this.init();
   }
 };

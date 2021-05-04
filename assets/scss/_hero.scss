@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
   }
 
   #about-section {
@@ -31,13 +32,14 @@
     .content {
       position: relative;
       z-index: 3;
+      perspective: 1000px;
     }
 
     .word {
       line-height: inherit;
       font-size: inherit;
       display: inline-block;
-      overflow: hidden;
+
       .char {
         display: inline-block;
         will-change:transform;
@@ -49,33 +51,169 @@
       font-family: "StephenGillion DEMO";
       color: $gold;
       line-height: 1;
-
+      will-change: transform;
     }
 
-
     .title {
-      font-size:em(29);
+      font-size: em(29);
       font-weight: bold;
       margin-bottom: 20px;
       line-height: 49px;
+
+    }
+
+    .english {
+
+    }
+
+    .spanish {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
     }
 
     p {
-      font-size:em(24);
-      line-height: 1.6;
+      position: relative;
+      font-size: em(24);
+      margin-bottom: 40px;
+
+      * {
+        will-change: filter;
+        transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+            }
 
       .word {
-
         padding-bottom: 9px;
+
         .char {
-          transform: translateY(20px);
         }
       }
+      &.spanish {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
+
+
   }
+}
+
+
+.magnet {
+  display: inline-block;
+
+  text-decoration: none;
+
+  transition: all .3s ease;
+}
+
+
+.follow {
+  position: absolute;
+  left: -15px;
+  top: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 100%;
+  transition: transform .1s ease;
+
+  border: 1px solid $gold;
 }
 
 
 #location {
   height: 100vh;
 }
+
+.holder {
+  position: relative;
+  display: flex;
+  filter: url(#filter);
+
+  &:before,
+  &:after {
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    content: "";
+    height: 20px;
+    position: absolute;
+    width: 20px;
+  }
+  &:before {
+    background: #ffe897;
+    background: radial-gradient(to bottom left, #ffe897, #f98a05);
+    background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+    animation: orbit 5s linear infinite;
+  }
+  &:after {
+    animation-delay: -2.5s;
+    background: #e0e793;
+    background: -moz-radial-gradient(bottom right, #0b2647, #153941);
+    background: radial-gradient(to top left, #0b2647, #153941);
+    background: -webkit-radial-gradient(bottom right, #0b2647, #153941);
+    left: 0;
+    top: 0;
+    z-index: -1;
+    animation:  orbitrev 5s linear infinite;
+  }
+}
+
+.btn {
+  border-radius: 15px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  border-radius: 100px;
+  cursor:pointer;
+  color: #0e2745;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+
+  span {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+  }
+
+  &:before {
+    background-color: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  svg {
+    bottom: 30px;
+    position: absolute;
+    right: 30px;
+  }
+}
+// @keyframes orbit {
+//   from {
+//     transform: rotate(0deg) translateX(30px) rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg) translateX(30px) rotate(-360deg);
+//   }
+// }
+//
+// @keyframes orbitrev {
+//   from {
+//     transform: rotate(360deg) translateX(30px) rotate(-360deg);
+//   }
+//   to {
+//     transform: rotate(0deg) translateX(30px) rotate(0deg);
+//
+//   }
+// }

@@ -11,7 +11,6 @@
   </section>
 </template>
 <script>
-// import { TimelineMax, gsap } from 'gsap';
 import LianaComponent from '~/components/LianaComponent.vue';
 import HeroContentComponent from '~/components/HeroContentComponent.vue';
 

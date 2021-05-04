@@ -59,7 +59,6 @@ export default {
         }
       });
     });
-
     this.$nuxt.$on('pageChange', () => {
       this?.locomotive?.update();
     });

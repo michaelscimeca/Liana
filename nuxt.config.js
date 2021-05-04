@@ -95,7 +95,7 @@ module.exports = {
     },
     extraEases: {
       // expoScaleEase: true
-    }
+    },
   },
 
   /*

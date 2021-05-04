@@ -1,7 +1,7 @@
 <template>
   <nav id="nav-bar">
     <div class="row">
-      <div class="small-offset-3 small-6 column">
+      <div class="small-offset-1 small-5 column">
         <ul id="section-nav">
           <li class="active">About</li>
           <li>Journey</li>

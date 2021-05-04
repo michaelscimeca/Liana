@@ -3,7 +3,11 @@ body {
   height: 100%;
   background-color: #313131;
   color: white;
+  // cursor: none;
   font-family: "Monument Grotesk";
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 :root {
@@ -13,36 +17,29 @@ body {
 #app {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: url('/img/bg.jpg');
   background-size: cover;
 
- .js-locomotive {
-   min-height: 100vh;
-   width: 100%;
- }
+ // .js-locomotive {
+ //   min-height: 100vh;
+ //   width: 100%;
+ // }
 }
-.container  {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
+
+.spanish {
+  position: absolute;
+  display: none!important;
 }
-// .js-locomotive {
-//   overflow: hidden;
-//   box-sizing: border-box;
+
+// .container  {
 //   position: relative;
-//   min-height: 100vh;
-//   will-change: transform;
-//
-//   .scroll {
-//     height: 100%;
-//
-//     will-change: transform;
-//   }
-//
+//   overflow: hidden;
+//   height: 100%;
+//   width: 100%;
 // }
+
 
 h1,
 h2,
@@ -50,7 +47,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Circular-Book";
   text-transform: uppercase;
   font-weight: 300;
 }
@@ -59,7 +55,8 @@ h1 {
 }
 
 h2 {
-  color: $white;
+  text-transform: none;
+  will-change: transform;
 }
 
 h3 {
@@ -86,12 +83,3 @@ ul {
 
 ::selection { background: transparent; }
 ::-moz-selection { background: transparent; }
-
-
-h2 {
-  text-transform: none;
-  will-change: transform;
-  transform-style: preserve-3d;
-  perspective: 100px;
-
-}

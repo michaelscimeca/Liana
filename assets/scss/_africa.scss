@@ -1,0 +1,28 @@
+#africa {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  #africa-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-image: url('/img/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #africa-img-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-image: url('/img/two.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    // opacity: 0.3;
+  }
+}

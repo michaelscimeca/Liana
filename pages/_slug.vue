@@ -16,8 +16,6 @@ import imagesLoaded from 'imagesloaded';
 import meta from '~/mixins/meta.js';
 import introAnimation from '~/mixins/introAnimation.js';
 // components
-import ImageComponent from '~/components/ImageComponent.vue';
-// import LargeTextComponent from '~/components/LargeTextComponent.vue';
 
 
 export default {
@@ -57,11 +55,7 @@ export default {
     introAnimation
   ],
   components: {
-    ImageComponent,
     // LargeTextComponent,
-    SmallTextComponent,
-    NextProjectComponent,
-    ProjectComponent,
   },
   // Data from API / CMS
   async asyncData ({ $content, store, params }) {
