@@ -1,0 +1,182 @@
+#bulb-container {
+  position: relative;
+  width: 100%;
+  // perspective: 1000px;
+  .bulb {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    transform-origin: top center;
+    // filter: blur(1px);
+    opacity: 1;
+    top: 15px;
+    left: 15px;
+    background: #ffe897;
+    box-shadow: 0px 5px 1rem 0 #030517d6;
+
+    &.one {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      height: 10px;
+      width: 10px;
+      right: 30px;
+      // transform: translate(30px, 50px);
+    }
+
+    &.two {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      z-index: -1;
+      height: 15px;
+      width: 15px;
+
+    }
+
+    &.three {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      height: 15px;
+      width: 15px;
+      z-index: -1;
+    }
+
+    &.four {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      height: 18px;
+      width: 18px;
+      z-index: -1;
+
+    }
+
+    &.five {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      z-index: -1;
+      height: 2px;
+      width: 2px;
+    }
+
+    &.six {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      z-index: -1;
+      height: 18px;
+      width: 18px;
+    }
+
+    &.seven {
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      z-index: -1;
+      height: 22px;
+      width: 22px;
+    }
+
+    &.eight {
+      z-index: -1;
+      height: 8px;
+      width: 8px;
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+    }
+
+    &.nine {
+      z-index: -1;
+      height: 18px;
+      width: 18px;
+      filter: blur(0px);
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+    }
+  }
+}
+
+#button-container {
+  position: relative;
+  filter: url(#filter);
+  display: inline-block;
+  margin-top: 30px;
+  cursor: none;
+
+  * {
+    will-change: filter;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  #small-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 18px;
+    border-radius: 100px;
+    color: #0e2745;
+    font-size: em(15);
+    font-family: "Monument Grotesk";
+    line-height: 1;
+    font-weight: 500;
+    overflow: hidden;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+
+    svg {
+      position: absolute;
+      left: 0px;
+      bottom: -50px;
+      width: 80px;
+      height: 80px;
+
+    }
+    span {
+      top: -5px;
+      position: relative;
+      z-index: 333;
+    }
+  }
+
+  #btn {
+    position: relative;
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.4);
+    filter: blur(120px);
+    cursor: pointer;
+    color: #0e2745;
+    font-size: em(15);
+    line-height: 1;
+    font-weight: 500;
+    overflow: hidden;
+    font-family: "Monument Grotesk";
+
+    &:before {
+      background-color: rgba(255,255,255,1);
+      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    span {
+      top: -5px;
+      position: relative;
+      z-index: 333;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

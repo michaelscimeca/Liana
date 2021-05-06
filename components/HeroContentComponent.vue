@@ -16,25 +16,26 @@
       <p ref="paragraph">
         <span class="english">Experienced program director with a demonstrated history of working in the nonprofit sector. Skilled in systems thinking; program development and implementation; community stakeholder and partner engagement. Strong social impact professional graduating from the University of Chicago Booth School of Business in Summer 2020.</span>
       </p>
-      <div id="button-container">
-        <div ref="bulbContainer" id="bulb-container">
-          <div class="float"><div class="bulb one"></div></div>
-          <div class="float"><div class="bulb two"></div></div>
-          <div class="float"><div class="bulb three"></div></div>
-          <div class="float"><div class="bulb four"></div></div>
-          <div class="float"><div class="bulb six"></div></div>
-          <div class="float"><div class="bulb seven"></div></div>
-          <div class="float"><div class="bulb eight"></div></div>
-          <div class="float"><div class="bulb nine"></div></div>
-        </div>
-        <div id="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
-          <svg fill="none"><path id="path" d="M50,25c0,13.81-11.19,25-25,25c-7.18,0-14.24-1.98-18.8-6.83C1.99,38.7,0,31.63,0,25c0-6.8,1.89-13.53,6.29-18.04
-            C10.83,2.31,17.99,0,25,0c6.42,0,13.28,1.9,17.7,5.88C47.8,10.46,50,17.61,50,25z"/></svg>
-          <span class="english">Hi!</span>
-        </div>
-        <div id="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
-          <span class="english">Hi,&nbsp; I'm Liana I would love to hear from you.</span>
-        </div>
+    </div>
+
+    <div id="button-container">
+      <div ref="bulbContainer" id="bulb-container">
+        <div class="float"><div class="bulb one"></div></div>
+        <div class="float"><div class="bulb two"></div></div>
+        <div class="float"><div class="bulb three"></div></div>
+        <div class="float"><div class="bulb four"></div></div>
+        <div class="float"><div class="bulb six"></div></div>
+        <div class="float"><div class="bulb seven"></div></div>
+        <div class="float"><div class="bulb eight"></div></div>
+        <div class="float"><div class="bulb nine"></div></div>
+      </div>
+      <div id="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
+        <svg fill="none"><path id="path" d="M50,25c0,13.81-11.19,25-25,25c-7.18,0-14.24-1.98-18.8-6.83C1.99,38.7,0,31.63,0,25c0-6.8,1.89-13.53,6.29-18.04
+          C10.83,2.31,17.99,0,25,0c6.42,0,13.28,1.9,17.7,5.88C47.8,10.46,50,17.61,50,25z"/></svg>
+        <span class="english">Hi!</span>
+      </div>
+      <div id="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
+        <span class="english">Hi,&nbsp; I'm Liana I would love to hear from you.</span>
       </div>
     </div>
   </section>
@@ -87,17 +88,19 @@ export default {
 
     // console.log([...this.$refs.bulbContainer.children].slice(0, -1))
     const floaters = [...document.querySelectorAll('.float ')];
-    const bulbs = [...document.querySelectorAll('.float .bulb')].slice(0, -1);
+    const bulbs = [...document.querySelectorAll('.float .bulb')];
 
     // this.tl.to(floaters, {x:"random(200,280)", y:"random(20,230)", duration:2, delay: (index) => { return index*0.5}});
 
-    console.log( bulbs)
+    // console.log( bulbs)
     this.btnTween
     .to(bulbs, {
       x: 0 , //chooses a random number between -20 and 20 for each target, rounding to the closest 5!
       y: 0,
       filter: 'blur(0px)',
       ease:"expo.in",
+      // boxShadow: '0px -0px 0px 0px  #ffe897',
+
       opacity: 1,
       scale: 1,
       duration: 1
@@ -147,6 +150,15 @@ export default {
       x: 20,
       y: 0,
       opacity: 0,
+    })
+    .set(bulbs, {
+      // boxShadow: '4px -1px 20px 12px #702e24',
+      x: () => {
+        return this.$gsap.utils.random(-(window.innerWidth / 3), 0)
+      },
+      y: () => {
+        return this.$gsap.utils.random(-(window.innerHeight / 2), 20)
+      },
     })
     .set(floaters, {
       x: 20,
@@ -215,18 +227,19 @@ export default {
       opacity: 1,
       duration: 1,
       },'<')
-    this.ballTwoTween.to(".bulb.nine", {
-      duration: 11,
-      repeat: -1,
-      repeatDelay: 0,
-      ease: "power1.inOut",
-      motionPath:{
-        path: "#path",
-        align: "#path",
-        autoRotate: false,
-        alignOrigin: [0.5, 0.5]
-      }
-    });
+
+    // this.ballTwoTween.to(".bulb.nine", {
+    //   duration: 11,
+    //   repeat: -1,
+    //   repeatDelay: 0,
+    //   ease: "power1.inOut",
+    //   motionPath:{
+    //     path: "#path",
+    //     align: "#path",
+    //     autoRotate: false,
+    //     alignOrigin: [0.5, 0.5]
+    //   }
+    // });
   },
   beforeDestroy: function () {
   }
