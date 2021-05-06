@@ -112,6 +112,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    distDir: 'out',
+
     /*
     ** You can extend webpack config here
     */
