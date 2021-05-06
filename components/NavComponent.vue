@@ -10,8 +10,8 @@
       </div>
       <div class="small-3 column">
         <ul id="language-nav">
-          <li class="active"><span>English</span></li>
-          <li><span>Spanish</span></li>
+          <li @click="changeToEnglish" class="active"><span>English</span></li>
+          <li @click="changeToSpanish"><span>Spanish</span></li>
         </ul>
       </div>
     </div>
@@ -25,6 +25,7 @@ export default {
   },
   data () {
     return {
+      paragraphTween: null,
     };
   },
   computed: {
@@ -40,6 +41,14 @@ export default {
     }
   },
   methods: {
+    changeToEnglish: function () {
+      console.log('back to english')
+      // this.englishTween.reverse()
+    },
+    changeToSpanish: function () {
+      console.log('back to spanish')
+      // this.englishTween.play()
+    },
     introAnimation: function () {
     },
     isRouteActive: function (index) {
@@ -54,6 +63,23 @@ export default {
   },
   mounted: function () {
     this.$nuxt.$on('heroAnimFinished', this.introAnimation);
+    this.allEnglish = document.querySelectorAll('.english');
+    // this.allSpanish = document.querySelectorAll('.spanish');
+    // this.spanishTween = this.$gsap.timeline({ paused:true  });
+    this.englishTween = this.$gsap.timeline({ paused:true  });
+
+    // this.englishTween
+    // .to(this.allEnglish, {
+    //   opacity: 0,
+    //   filter: 'blur(20px)',
+    //   // visibility: 'hidden',
+    // })
+    // .to(this.allSpanish, {
+    //   opacity: 1,
+    //   filter: blur('0px'),
+    //   // visibility: 'visible',
+    // })
+
   },
   beforeDestroy: function () {
 

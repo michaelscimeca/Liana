@@ -91,7 +91,9 @@ module.exports = {
   },
   gsap: {
     extraPlugins: {
-      scrollTrigger: true
+      scrollTrigger: true,
+      motionPath: true,
+
     },
     extraEases: {
       // expoScaleEase: true

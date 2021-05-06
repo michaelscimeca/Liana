@@ -31,7 +31,6 @@ export default {
   methods: {
     clamp: (num, min, max) => { return num <= min ? min : num >= max ? max : num; },
   },
-
   watch: {
     position: function (oldVal, newVal) {
       this.$data.y = (oldVal - newVal);
@@ -42,7 +41,6 @@ export default {
       return this.$store.state.locomotive.scroll.y
     }
   },
-
   mounted: function () {
     this.lianaTween = this.$gsap.timeline();
     this.lianaTween

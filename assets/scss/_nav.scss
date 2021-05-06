@@ -12,7 +12,6 @@ ul#section-nav,
 ul#language-nav {
   li {
     font-size:em(18);
-    cursor:pointer;
   }
 }
 
@@ -51,30 +50,41 @@ ul#language-nav {
 }
 
 #language-nav {
-  text-align: left;
+  display: flex;
+      flex-direction: column;
+      text-align: left;
+
   li {
+    position: relative;
+    display: inline-block;
     margin-bottom: 2px;
+        cursor: grab;
+
+    &:before {
+      pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    margin-top: -5px;
+    color: $gold;
+  }
     span {
+      height: 100%;
       position: relative;
-      &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: -30px;
-        margin-top: -2px;
-        color: $gold;
-      }
+      display: inline-block;
+      top: -5px;
+
+
     }
 
     &.active {
-      span  {
-        &:before {
-          background-image: url('/img/arrow.svg');
-          background-size: contain;
-          background-repeat: no-repeat;
-          height: 17px;
-          width: 18px;
-        }
+      &:before {
+        background-image: url('/img/arrow.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 17px;
+        width: 18px;
       }
     }
 
