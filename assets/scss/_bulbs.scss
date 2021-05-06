@@ -1,7 +1,42 @@
 #bulb-container {
   position: relative;
   width: 100%;
+  $yellow: #ffcc00;
+  $outline: rgba(#fff, .4);
+  $shadow: rgba($yellow, .5);
   // perspective: 1000px;
+  @keyframes ember {
+    0% {
+      transform: translate(10px ,15px);
+      opacity: .99;
+      text-shadow: -1px -1px 0 $outline, 1px -1px 0 $outline, -1px 1px 0 $outline, 1px 1px 0 $outline, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+    }
+    20% {
+      opacity: 0.8;
+	  	text-shadow: none;
+      transform: translate(0px ,15px);
+    }
+    40% {
+      opacity: 1;
+      text-shadow: none;
+      transform: translate(0px ,5px);
+    }
+    50% {
+      opacity: 0.6;
+      text-shadow: none;
+      transform: translate(10px ,5px);
+    }
+    100% {
+      opacity: .99;
+      transform: translate(10px ,15px);
+    }
+  }
+
+  .f {
+    animation:  ember 20s linear infinite; /* IE 10+, Fx 29+ */
+
+  }
+
   .bulb {
     position: absolute;
     height: 20px;
@@ -98,11 +133,11 @@
   margin-top: 30px;
   cursor: none;
 
-  * {
-    will-change: filter;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
+  // * {
+  //   will-change: filter;
+  //   transform-style: preserve-3d;
+  //   backface-visibility: hidden;
+  // }
 
   #small-btn {
     position: absolute;
@@ -117,17 +152,14 @@
     font-weight: 500;
     overflow: hidden;
     background-color: rgba(255,255,255,1);
-    box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
+    // box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
     display: inline-block;
-    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
 
     svg {
       position: absolute;
       left: 0px;
-      bottom: -50px;
-      width: 80px;
-      height: 80px;
-
+      top: 0%;
+      margin-top: 0px;
     }
     span {
       top: -5px;
