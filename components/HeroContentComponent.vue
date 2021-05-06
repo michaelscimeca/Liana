@@ -62,9 +62,7 @@ export default {
     ballleave: function() {
       this.btnTween.reverse()
       console.log('out')
-
     },
-
     getRandomArbitrary(min, max) {
       return Math.random() * (max - min) + min;
     },
@@ -95,15 +93,14 @@ export default {
     // console.log( bulbs)
     this.btnTween
     .to(bulbs, {
-      x: 0 , //chooses a random number between -20 and 20 for each target, rounding to the closest 5!
+      x: (i) => { return i * 35},
       y: 0,
       filter: 'blur(0px)',
       ease:"expo.in",
-      // boxShadow: '0px -0px 0px 0px  #ffe897',
-
       opacity: 1,
       scale: 1,
-      duration: 1
+      duration: 1,
+      stagger: (i) => { return i * 0.004}
     },'<-0.2')
     .to(this.$refs.btn, {
       opacity: 1,
@@ -152,7 +149,6 @@ export default {
       opacity: 0,
     })
     .set(bulbs, {
-      // boxShadow: '4px -1px 20px 12px #702e24',
       x: () => {
         return this.$gsap.utils.random(-(window.innerWidth / 3), 0)
       },
@@ -163,9 +159,9 @@ export default {
     .set(floaters, {
       x: 20,
       y: 5,
-      scale: 0.2,
+      scale: 3.1,
       opacity: 0,
-      rotateY: '-15deg',
+      rotate: '-145deg',
     })
     .set(this.$refs.smallBtn, {
       x: 20,
@@ -226,6 +222,8 @@ export default {
       ease:"expo.out",
       opacity: 1,
       duration: 1,
+      rotate: '-0deg',
+
       },'<')
 
     // this.ballTwoTween.to(".bulb.nine", {
