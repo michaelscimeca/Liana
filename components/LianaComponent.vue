@@ -1,20 +1,19 @@
 <template>
-  <section ref="lianaCon" id="liana-container">
-    <div ref="lianaConimg" id="liana-container-img" class="js-load"></div>
-    <div id="mask" ref="mask">
-      <div ref="blob" class="blob js-load"></div>
-      <div ref="dotCont" id="dots-container">
-        <div class="gsapElm js-load">
-          <div class="dot" data-scroll data-scroll-speed="0.4"></div>
+  <section id="liana-section" ref="lianaSection">
+    <div id="liana-container" class="js-load" ref="lianaCont"></div>
+    <div id="mask-container" ref="maskCont">
+      <div id="paint-dots-container" ref="dotCont">
+        <div class="paint-dot-container">
+          <div class="paint-dot" data-scroll data-scroll-speed="0.4"></div>
         </div>
-        <div class="gsapElm js-load">
-          <div class="dot" data-scroll data-scroll-speed="0.6"></div>
+        <div class="paint-dot-container">
+          <div class="paint-dot" data-scroll data-scroll-speed="0.6"></div>
         </div>
-        <div class="gsapElm js-load">
-          <div class="dot" data-scroll data-scroll-speed="0.8"></div>
+        <div class="paint-dot-container">
+          <div class="paint-dot" data-scroll data-scroll-speed="0.8"></div>
         </div>
-        <div class="gsapElm js-load">
-          <div class="dot" data-scroll data-scroll-speed="1.1"></div>
+        <div class="paint-dot-container">
+          <div class="paint-dot" data-scroll data-scroll-speed="1.1"></div>
         </div>
       </div>
       <div id="liana-box">
@@ -29,80 +28,24 @@
   </section>
 </template>
 <script>
-// mixins
-// import scrollTriggerInit from '~/mixins/scrollTriggerInit.js';
 export default {
-  mixins: [
-    // scrollTriggerInit
-  ],
   data() {
     return {
-      y: 0,
-      lianaTween: null,
-    };
+    }
   },
   methods: {
     clamp: (num, min, max) => {
       return num <= min ? min : num >= max ? max : num;
     },
   },
-  watch: {
-    position: function(oldVal, newVal) {
-      this.$data.y = newVal;
-      this.$ScrollTrigger.update();
-    }
-  },
-  computed: {
-    position: function() {
-      return this.$store.state.locomotive.scroll.y
-    }
-  },
   mounted: function() {
-    this.container = document.querySelector('.js-locomotive .scroll');
-    this.a = document.querySelector('#africa');
-    const _this = this;
-
-    this.$ScrollTrigger.scrollerProxy(_this.container, {
-      scrollTop(value) {
-        return arguments.length ? _this.container.scrollTo(value, 0, 0) : _this.$data.y;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight
-        };
-      }
-    });
-
-    // this.tl = this.$gsap.timeline({
-    //   scrollTrigger: {
-    //     scroller: this.container,
-    //     trigger: this.a,
-    //     start: 'top bottom',
-    //     end: '+444 center',
-    //     scrub: true,
-    //     markers: true
-    //   }
-    // });
-
-    // this.tl
-    // .to('.f', {
-    //   x: 35,
-    //   y:300,
-    //   rotate: '360deg',
-    //   ease: 'Power1.easeInOut',
-    // })
-
-
     this.lianaTween = this.$gsap.timeline();
     this.lianaTween
-    .set(this.$refs.lianaCon, {
+    .set(this.$refs.lianaSection, {
       opacity: 0,
       y: 0,
     })
-    .set(this.$refs.lianaConimg, {
+    .set(this.$refs.lianaCont, {
       opacity: 0,
       scale: 0.9,
       opacity: 0,
@@ -115,14 +58,14 @@ export default {
       opacity: 0,
       scale: 0,
     })
-    .to(this.$refs.lianaCon, {
+    .to(this.$refs.lianaSection, {
       scale: 1,
       filter: 'blur(0px)',
       opacity: 1,
       duration: 1.2,
       ease: "power4.inOut",
     },"<")
-    .to(this.$refs.lianaConimg, {
+    .to(this.$refs.lianaCont, {
       scale: 1,
       filter: 'blur(0px)',
       opacity: 1,

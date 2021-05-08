@@ -3,14 +3,7 @@
     <div class="follow"></div>
     <HeroComponent />
     <AfricaComponent/>
-    <div class="footer">
-      <svg preserveAspectRatio="none" id="footer-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2278 683" overflow="visible">
-        <defs>
-        <style>.footer-svg{fill:var(--color-primary);}</style>
-      </defs>
-      <path class="footer-svg" id="bouncy-path" d="M0-0.3C0-0.3,464,156,1139,156S2278-0.3,2278-0.3V683H0V-0.3z"/>
-    </svg>
-  </div>
+
 </section>
 </template>
 

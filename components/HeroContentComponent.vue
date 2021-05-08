@@ -53,9 +53,25 @@
   export default {
     data () {
       return {
+        y: 0,
+        store: {
+          pX: 0,
+          pY: 0,
+          nX: 0,
+          nY: 0,
+        }
       };
     },
-    computed : {
+    watch: {
+      position: function(oldVal, newVal) {
+        this.$data.y = newVal;
+        this.$ScrollTrigger.update();
+      }
+    },
+    computed: {
+      position: function() {
+        return this.$store.state.locomotive.scroll.y
+      }
     },
     methods: {
       ballover: function() {
@@ -72,8 +88,67 @@
 
       const title= titleConvert[0].chars;
       const paragraph = paragraphConvert[0].chars;
-      const floaters = [...document.querySelectorAll('.float ')];
+      const floaters = [...document.querySelectorAll('.float')];
       const bulbs = [...document.querySelectorAll('.float .bulb')];
+
+
+      this.container = document.querySelector('.js-locomotive .scroll');
+      this.a = document.querySelector('#africa');
+      const _this = this;
+
+      this.$ScrollTrigger.scrollerProxy(_this.container, {
+        scrollTop(value) {
+          return arguments.length ? _this.container.scrollTo(value, 0, 0) : _this.$data.y;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+          };
+        }
+      });
+
+
+      const down = 'M0-0.3C0-0.3,464,156,1139,156S2278-0.3,2278-0.3V683H0V-0.3z';
+      const center = 'M0-0.3C0-0.3,464,0,1139,0s1139-0.3,1139-0.3V683H0V-0.3z';
+
+
+      this.floatingaround = this.$gsap.timeline({ repeat: -1})
+
+
+      this.tl = this.$gsap.timeline({
+        scrollTrigger: {
+          scroller: this.container,
+          trigger: '#location',
+          start: '+444 bottom',
+          end: '+544 center',
+          scrub: true,
+          markers: true,
+          onEnter: self => {
+            const velocity = self.getVelocity();
+            const variation = (velocity / 3000) > 1.5 ? 1.5 : velocity / 3000;
+            this.$gsap.fromTo('#bouncy-path', {
+              morphSVG: down
+            }, {
+              delay: 0,
+              duration: 2,
+              morphSVG: center,
+              ease: `elastic.out(${1 + variation}, ${1 - (variation / 1.7)})`,
+              overwrite: 'auto'
+            });
+          }
+        }
+      });
+      //
+      // this.tl
+      // .to('#bouncy-path', {
+      //   // x: 35,
+      //   y:300,
+      //   // rotate: '360deg',
+      //   ease: 'Power1.easeInOut',
+      // })
 
       let options = {
         duration: 1.5,
@@ -81,6 +156,8 @@
 
       /// intro
       this.interoTween = this.$gsap.timeline();
+
+
 
       this.interoTween
       .set(this.$refs.logo, {
@@ -193,14 +270,41 @@
         opacity: 1,
         duration: 3,
         rotate: '-0deg',
+        onComplete: () => {
+          this.floatingaround
+          .to('.f', {
+            x: () => {
+              this.store.nX = this.$gsap.utils.random(133, 0);
+              this.store.pX = this.store.nX
+              return this.store.pX
+            },
+            y: () => {
+              this.store.nY = this.$gsap.utils.random(133, 0);
+              this.store.pY = this.store.nY
+              return this.store.nY
+            },
+            duration: 12,
+          }).to('.f',{
+            x: this.store.pX,
+            y: this.store.pY,
+          })
+        }
       },'<-1')
 
       /// Btn
       this.btnTween = this.$gsap.timeline( { paused: true} );
 
       this.btnTween
+      .to('.f', {
+        x: 0,
+        y: 0,
+        rotate: 0,
+        ease:"expo.in",
+        duration: 0,
+        overwrite: 'auto'
+      })
       .to(bulbs, {
-        x: (i) => { return i * 35},
+        x: (i) => { return i * 35 },
         y: 0,
         filter: 'blur(0px)',
         ease:"expo.in",
@@ -209,13 +313,7 @@
         duration: 1,
         stagger: (i) => { return i * 0.004}
       },'<-0.2')
-      // .to('.f', {
-      //   x: 0,
-      //   y: 0,
-      //   rotate: 0,
-      //   ease:"expo.in",
-      //   duration: 1,
-      // },'<-0.2')
+
       .to(this.$refs.orbitable, {
         opacity: 0,
         scale: 1,

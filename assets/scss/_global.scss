@@ -3,7 +3,7 @@ body {
   height: 100%;
   background-color: #313131;
   color: white;
-  font-family: "Switzer Variable";
+  font-family: "plup display";
 }
 
 * {
@@ -28,23 +28,6 @@ body {
   width: 100%;
   background-image: url('/img/bg.jpg');
   background-size: cover;
-
-  .js-locomotive {
-    min-height: 100vh;
-    width: 100%;
-  }
-}
-
-.spanish {
-  display: none;
-  visibility: hidden;
-}
-
-.container  {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
 }
 
 
@@ -80,34 +63,6 @@ ul {
   li {
     list-style: none;
   }
-}
-
-
-
-
-.float-hide {
-  width: 100%;
-  position: relative;
-  left: 0;
-  top: 0;
-  height: 100%;
-  position: absolute;
-}
-
-.bulb-orbit {
-  position: absolute;
-  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-  border-radius: 50%;
-  transform-origin: top left;
-  filter: blur(1px);
-  z-index: 0;
-  opacity: 1;
-  top: -10px;
-  left: -10px;
-  background: #474748;
-  box-shadow: #0e3152 -1px 6px 14px 14px;
-  height: 15px;
-  width: 15px;
 }
 
 
