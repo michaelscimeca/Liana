@@ -93,7 +93,12 @@ module.exports = {
     extraPlugins: {
       scrollTrigger: true,
       motionPath: true,
-
+      DrawSVGPlugin: true,
+    },
+    clubPlugins: {
+      customEase: true,
+      drawSVG: true,
+      morphSVG: true,
     },
     extraEases: {
       // expoScaleEase: true

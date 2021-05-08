@@ -1,10 +1,10 @@
 <template>
   <section id="hero" ref="hero">
     <div class="row">
-      <main class="small-6 column">
+      <main class="small-5 column">
         <LianaComponent/>
       </main>
-      <aside class="small-6 column">
+      <aside class="small-7 column">
         <HeroContentComponent/>
       </aside>
     </div>

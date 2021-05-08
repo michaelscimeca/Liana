@@ -3,11 +3,13 @@ body {
   height: 100%;
   background-color: #313131;
   color: white;
-  // cursor: none;
-  font-family: "inter";
-
-
+  font-family: "Switzer Variable";
 }
+
+* {
+  outline: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -15,6 +17,9 @@ body {
 :root {
   font-size: 16px;
 }
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
 
 #app {
   position: relative;
@@ -24,10 +29,10 @@ body {
   background-image: url('/img/bg.jpg');
   background-size: cover;
 
-  // .js-locomotive {
-  //   min-height: 100vh;
-  //   width: 100%;
-  // }
+  .js-locomotive {
+    min-height: 100vh;
+    width: 100%;
+  }
 }
 
 .spanish {
@@ -35,12 +40,12 @@ body {
   visibility: hidden;
 }
 
-// .container  {
-//   position: relative;
-//   overflow: hidden;
-//   height: 100%;
-//   width: 100%;
-// }
+.container  {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
 
 
 h1,
@@ -77,13 +82,7 @@ ul {
   }
 }
 
-* {
-  outline: none;
 
-}
-
-::selection { background: transparent; }
-::-moz-selection { background: transparent; }
 
 
 .float-hide {
@@ -109,4 +108,12 @@ ul {
   box-shadow: #0e3152 -1px 6px 14px 14px;
   height: 15px;
   width: 15px;
+}
+
+
+@for $i from 1 through 200 {
+  .dot:nth-child(#{$i}) {
+    width: 1px + $i/7;
+    height: 1px + $i/7;
+  }
 }

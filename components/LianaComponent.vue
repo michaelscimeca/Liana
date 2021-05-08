@@ -1,47 +1,66 @@
 <template>
-  <section ref="lianaCon" id="liana-container">
-    <div ref="lianaConimg" id="liana-container-img" class="js-load"></div>
-    <div id="mask" ref="mask">
-      <div ref="blob" class="blob js-load"></div>
-      <div ref="dotCont" id="dots-container">
-        <div class="gsapElm js-load"><div class="dot" data-scroll data-scroll-speed="0.4"></div></div>
-        <div class="gsapElm js-load"><div class="dot" data-scroll data-scroll-speed="0.6"></div></div>
-        <div class="gsapElm js-load"><div class="dot" data-scroll data-scroll-speed="0.8"></div></div>
-        <div class="gsapElm js-load"><div class="dot" data-scroll data-scroll-speed="1.1"></div></div>
+<section ref="lianaCon" id="liana-container">
+  <div ref="lianaConimg" id="liana-container-img" class="js-load"></div>
+  <div id="mask" ref="mask">
+    <div ref="blob" class="blob js-load"></div>
+    <div ref="dotCont" id="dots-container">
+      <div class="gsapElm js-load">
+        <div class="dot" data-scroll data-scroll-speed="0.4"></div>
       </div>
-      <div id="liana-box">
-        <div ref="liana" id="liana" class="js-load" data-scroll  data-scroll-speed="-0.5"></div>
-        <div id="star-container">
-          <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div>
-        </div>
+      <div class="gsapElm js-load">
+        <div class="dot" data-scroll data-scroll-speed="0.6"></div>
+      </div>
+      <div class="gsapElm js-load">
+        <div class="dot" data-scroll data-scroll-speed="0.8"></div>
+      </div>
+      <div class="gsapElm js-load">
+        <div class="dot" data-scroll data-scroll-speed="1.1"></div>
       </div>
     </div>
-  </section>
+    <div id="liana-box">
+      <div ref="liana" id="liana" class="js-load" data-scroll data-scroll-speed="-0.5"></div>
+      <div id="star-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
+    </div>
+  </div>
+</section>
 </template>
 <script>
-
+// mixins
+// import scrollTriggerInit from '~/mixins/scrollTriggerInit.js';
 export default {
-  data () {
+  mixins: [
+    // scrollTriggerInit
+  ],
+  data() {
     return {
+      y: 0,
       lianaTween: null,
     };
   },
   methods: {
-    clamp: (num, min, max) => { return num <= min ? min : num >= max ? max : num; },
+    clamp: (num, min, max) => {
+      return num <= min ? min : num >= max ? max : num;
+    },
   },
   watch: {
-    position: function (oldVal, newVal) {
-      this.$data.y = (oldVal - newVal);
+    position: function(oldVal, newVal) {
+      this.$data.y = newVal;
+      this.$ScrollTrigger.update();
     }
   },
   computed: {
-    position: function () {
+    position: function() {
       return this.$store.state.locomotive.scroll.y
     }
   },
-  mounted: function () {
+  mounted: function() {
+
+
+
     this.lianaTween = this.$gsap.timeline();
     this.lianaTween
     .set(this.$refs.lianaCon, {
@@ -126,8 +145,7 @@ export default {
     },"<+0.5")
 
   },
-  beforeDestroy: function () {
-  }
+  beforeDestroy: function() {}
 };
 </script>
 

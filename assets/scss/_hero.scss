@@ -6,16 +6,13 @@
     flex-direction: column;
     height: 100vh;
   }
-svg {
-height: 0;
-}
+
   #about-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     height: 972px;
-    width: 837px;
     perspective: 1000px;
 
     #logo {
@@ -25,7 +22,7 @@ height: 0;
       width: 100%;
       height: 100%;
       background-image: url('/img/logo.png');
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
       opacity: 0.5;
       transform: scale(0.7)
@@ -37,18 +34,6 @@ height: 0;
       perspective: 1000px;
     }
 
-    .word {
-      line-height: inherit;
-      font-size: inherit;
-      display: inline-block;
-      overflow: hidden;
-
-      .char {
-        display: inline-block;
-        will-change: transform;
-        vertical-align: text-top;
-      }
-    }
 
     .name {
       font-size: em(227);
@@ -59,24 +44,31 @@ height: 0;
     }
 
     .title {
-      font-size: em(34);
-      font-weight: 500;
+      font-size: em(33);
+      font-weight: 700;
+      line-height: 37px;
+      letter-spacing: 2px;
       margin-bottom: 20px;
-      line-height: 49px;
-      letter-spacing: 0.5px;
-
     }
 
     p {
       position: relative;
-      font-size: em(25);
-      list-style: 1.4;
-      margin-bottom: 40px;
+      font-size: em(28);
+      line-height: 40px;
       letter-spacing: 0.5px;
+      font-family: "muli";
+      margin-bottom: 40px;
+
       .word {
-        // padding-bottom: 9px;
+        line-height: inherit;
+        font-size: inherit;
+        display: inline-block;
+        overflow: hidden;
 
         .char {
+          display: inline-block;
+          will-change: transform;
+          vertical-align: text-top;
         }
       }
     }

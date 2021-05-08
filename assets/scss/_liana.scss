@@ -1,7 +1,7 @@
 #liana-container {
   position: relative;
   height: 1252px;
-  width: 1092px;
+  width: 1000px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,45 +102,20 @@
   #mask {
     width: 100%;
     mask-border: url('/img/mask.svg');
-    // --main-bg-color: 1220deg;
 
     .blob {
       position: absolute;
       top: 0;
-      left: -30px;
+      left: 0px;
       height: 100%;
       width: 100%;
       box-shadow: inset 0em 1em 250px 100px #0a2441;
-      animation: morph 35s infinite;
       will-change: transform;
       border-radius: 20%;
     }
 
-    &:before {
-      content: '';
-
-
-
-    }
   }
-  @keyframes morph {
-    0% {
-      transform: rotate(110deg) scale(1.1);
-      filter: blur(1px);
-      box-shadow: inset 0em 1em 250px 100px #0a2441;
-    }
 
-    50% {
-      filter: blur(0px);
-      box-shadow: inset 0em 1em 550px 320px #0a2441;
-    }
-
-    100% {
-      transform: rotate(110deg) scale(1.1);
-      filter: blur(1px);
-      box-shadow: inset 0em 1em 250px 100px #0a2441;
-    }
-  }
 
   #liana-box {
     width: 613px;

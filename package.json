@@ -21,7 +21,7 @@
     "cross-env": "^7.0.2",
     "express": "^4.16.4",
     "foundation-sites": "^6.5.3",
-    "gsap": "^3.6.0",
+    "gsap": "npm:@gsap/member",
     "imagesloaded": "^4.1.4",
     "install": "^0.13.0",
     "jquery": "^3.6.0",

@@ -1,4 +1,8 @@
 export default {
+  data: {
+    y: 0,
+    container: null,
+  },
   watch: {
     yScrollVal: function (newVal, oldVal) {
       this.$data.y = newVal;
@@ -17,7 +21,7 @@ export default {
 
       this.$ScrollTrigger.scrollerProxy(this.container, {
         scrollTop (value) {
-          return arguments.length ? this.container.scrollTo(value, 0, 0) : _this.y;
+          return arguments.length ? this.container.scrollTo(value, 0, 0) : _this.data.y;
         },
         getBoundingClientRect () {
           return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
@@ -26,6 +30,6 @@ export default {
     }
   },
   mounted: function () {
-    this.init();
+    // this.init();
   }
 };
