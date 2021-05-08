@@ -5,11 +5,12 @@
       <defs>
         <filter id="filter" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blurred"/>
-          <feColorMatrix in="blurred" type="matrix"   values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo"/>
+          <feColorMatrix in="blurred" type="matrix"  values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo"/>
           <feBlend in="SourceGraphic" in2="goo" />
         </filter>
       </defs>
     </svg>
+
     <div class="content">
       <div class="name" ref="name" >Liana V. Bran</div>
       <div class="title" ref="title">Director of Expansion Strategy at Cara Colletive</div>
@@ -29,6 +30,7 @@
         <div class="float"><div class="f"><div class="bulb eight"></div></div></div>
         <div class="float"><div class="f"><div class="bulb nine"></div></div></div>
       </div>
+
       <div class="float-hide" ref="orbitable"><div class="bulb-orbit"></div></div>
 
       <div id="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
@@ -38,10 +40,12 @@
           S47.3,10.2,47.3,22.7z"/> </svg>
           <span class="english">Hi!</span>
         </div>
+
         <div id="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
           <span class="english">Hi,&nbsp; I'm Liana I would love to hear from you.</span>
         </div>
       </div>
+
     </section>
   </template>
   <script>
@@ -49,11 +53,6 @@
   export default {
     data () {
       return {
-        nameTween: null,
-        titleTween: null,
-        paragraphTween: null,
-        logoTween: null,
-        btnTween: null,
       };
     },
     computed : {
@@ -61,83 +60,29 @@
     methods: {
       ballover: function() {
         this.btnTween.play()
-        console.log('hover')
       },
       ballleave: function() {
         this.btnTween.reverse()
-        console.log('out')
       },
-      getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-      },
-      getRandomInt: (max) => Math.floor(Math.random() * max)
     },
     mounted: function () {
       const Splitting = require('splitting');
-      const title = Splitting({ target: this.$refs.title, by: 'chars' });
-      const paragraph = Splitting({ target: this.$refs.paragraph.children[0], by: 'chars' });
+      const titleConvert = Splitting({ target: this.$refs.title, by: 'chars' });
+      const paragraphConvert = Splitting({ target: this.$refs.paragraph.children[0], by: 'chars' });
+
+      const title= titleConvert[0].chars;
+      const paragraph = paragraphConvert[0].chars;
+      const floaters = [...document.querySelectorAll('.float ')];
+      const bulbs = [...document.querySelectorAll('.float .bulb')];
 
       let options = {
         duration: 1.5,
       }
 
-      var randomPos = this.$gsap.utils.random(-1330, 1370, true);
-      const headline = title[0].chars;
-      const englishP = paragraph[0].chars;
-      this.ballTwoTween = this.$gsap.timeline();
-      this.btnTween = this.$gsap.timeline( { paused: true} );
-      this.tl = this.$gsap.timeline({repeat: -1});
+      /// intro
+      this.interoTween = this.$gsap.timeline();
 
-      // console.log([...this.$refs.bulbContainer.children].slice(0, -1))
-      const floaters = [...document.querySelectorAll('.float ')];
-      const bulbs = [...document.querySelectorAll('.float .bulb')];
-
-      // this.tl.to(floaters, {x:"random(200,280)", y:"random(20,230)", duration:2, delay: (index) => { return index*0.5}});
-
-      // console.log( bulbs)
-      this.btnTween
-      .to(bulbs, {
-        x: (i) => { return i * 35},
-        y: 0,
-        filter: 'blur(0px)',
-        ease:"expo.in",
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        stagger: (i) => { return i * 0.004}
-      },'<-0.2')
-      .to(this.$refs.orbitable, {
-        opacity: 0,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: options.duration,
-        ease: "power4.inOut",
-      },'<')
-      .to(this.$refs.btn, {
-        opacity: 1,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: options.duration,
-        ease: "power4.inOut",
-      },'<')
-      .to(this.$refs.btn, {
-        opacity: 1,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: options.duration,
-        ease: "power4.inOut",
-      },'<')
-      .to(this.$refs.smallBtn, {
-        scale:  1,
-        opacity: 1,
-        duration: 3,
-        backgroundColor: '#b7894a',
-        ease: "power4.inOut",
-      },'<')
-
-      this.ballsTween = this.$gsap.timeline();
-
-      this.ballsTween
+      this.interoTween
       .set(this.$refs.logo, {
         x: 0,
         y: 5,
@@ -151,12 +96,12 @@
         filter: 'blur(115px)',
         opacity: 0,
       })
-      .set(headline, {
+      .set(title, {
         x: 20,
         y: 0,
         opacity: 0,
       })
-      .set(englishP, {
+      .set(paragraph, {
         x: 20,
         y: 0,
         opacity: 0,
@@ -208,14 +153,14 @@
         opacity: 1,
         duration: 1.8,
       },'<')
-      .to(headline, {
+      .to(title, {
         x: 0,
         y: 0,
         ease:"expo.out",
         opacity: 1,
         duration: 1.8,
       },'<+0.3')
-      .to(englishP, {
+      .to(paragraph, {
         x: 0,
         y: 0,
         ease:"expo.out",
@@ -225,7 +170,6 @@
           return i * 0.002
         }
       },'<+0.5')
-
       .to(this.$refs.smallBtn, {
         x: 0,
         y: 0,
@@ -250,6 +194,59 @@
         duration: 3,
         rotate: '-0deg',
       },'<-1')
+
+      /// Btn
+      this.btnTween = this.$gsap.timeline( { paused: true} );
+
+      this.btnTween
+      .to(bulbs, {
+        x: (i) => { return i * 35},
+        y: 0,
+        filter: 'blur(0px)',
+        ease:"expo.in",
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        stagger: (i) => { return i * 0.004}
+      },'<-0.2')
+      // .to('.f', {
+      //   x: 0,
+      //   y: 0,
+      //   rotate: 0,
+      //   ease:"expo.in",
+      //   duration: 1,
+      // },'<-0.2')
+      .to(this.$refs.orbitable, {
+        opacity: 0,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: options.duration,
+        ease: "power4.inOut",
+      },'<')
+      .to(this.$refs.btn, {
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: options.duration,
+        ease: "power4.inOut",
+      },'<')
+      .to(this.$refs.btn, {
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: options.duration,
+        ease: "power4.inOut",
+      },'<')
+      .to(this.$refs.smallBtn, {
+        scale:  1,
+        opacity: 1,
+        duration: 3,
+        backgroundColor: '#b7894a',
+        ease: "power4.inOut",
+      },'<')
+
+      // Btn Orbit Ball
+      this.ballTwoTween = this.$gsap.timeline();
 
       this.ballTwoTween.to(".bulb-orbit", {
         duration: 11,

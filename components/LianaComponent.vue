@@ -1,32 +1,32 @@
 <template>
-<section ref="lianaCon" id="liana-container">
-  <div ref="lianaConimg" id="liana-container-img" class="js-load"></div>
-  <div id="mask" ref="mask">
-    <div ref="blob" class="blob js-load"></div>
-    <div ref="dotCont" id="dots-container">
-      <div class="gsapElm js-load">
-        <div class="dot" data-scroll data-scroll-speed="0.4"></div>
+  <section ref="lianaCon" id="liana-container">
+    <div ref="lianaConimg" id="liana-container-img" class="js-load"></div>
+    <div id="mask" ref="mask">
+      <div ref="blob" class="blob js-load"></div>
+      <div ref="dotCont" id="dots-container">
+        <div class="gsapElm js-load">
+          <div class="dot" data-scroll data-scroll-speed="0.4"></div>
+        </div>
+        <div class="gsapElm js-load">
+          <div class="dot" data-scroll data-scroll-speed="0.6"></div>
+        </div>
+        <div class="gsapElm js-load">
+          <div class="dot" data-scroll data-scroll-speed="0.8"></div>
+        </div>
+        <div class="gsapElm js-load">
+          <div class="dot" data-scroll data-scroll-speed="1.1"></div>
+        </div>
       </div>
-      <div class="gsapElm js-load">
-        <div class="dot" data-scroll data-scroll-speed="0.6"></div>
-      </div>
-      <div class="gsapElm js-load">
-        <div class="dot" data-scroll data-scroll-speed="0.8"></div>
-      </div>
-      <div class="gsapElm js-load">
-        <div class="dot" data-scroll data-scroll-speed="1.1"></div>
+      <div id="liana-box">
+        <div ref="liana" id="liana" class="js-load" data-scroll data-scroll-speed="-0.5"></div>
+        <div id="star-container">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+        </div>
       </div>
     </div>
-    <div id="liana-box">
-      <div ref="liana" id="liana" class="js-load" data-scroll data-scroll-speed="-0.5"></div>
-      <div id="star-container">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 </template>
 <script>
 // mixins
@@ -58,7 +58,42 @@ export default {
     }
   },
   mounted: function() {
+    this.container = document.querySelector('.js-locomotive .scroll');
+    this.a = document.querySelector('#africa');
+    const _this = this;
 
+    this.$ScrollTrigger.scrollerProxy(_this.container, {
+      scrollTop(value) {
+        return arguments.length ? _this.container.scrollTo(value, 0, 0) : _this.$data.y;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+      }
+    });
+
+    // this.tl = this.$gsap.timeline({
+    //   scrollTrigger: {
+    //     scroller: this.container,
+    //     trigger: this.a,
+    //     start: 'top bottom',
+    //     end: '+444 center',
+    //     scrub: true,
+    //     markers: true
+    //   }
+    // });
+
+    // this.tl
+    // .to('.f', {
+    //   x: 35,
+    //   y:300,
+    //   rotate: '360deg',
+    //   ease: 'Power1.easeInOut',
+    // })
 
 
     this.lianaTween = this.$gsap.timeline();
@@ -143,7 +178,6 @@ export default {
         })
       }
     },"<+0.5")
-
   },
   beforeDestroy: function() {}
 };
