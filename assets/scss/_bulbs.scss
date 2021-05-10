@@ -1,305 +1,117 @@
 #bulb-container {
   position: relative;
   width: 100%;
-  $yellow: #ffcc00;
-  $outline: rgba(#fff, .4);
-  $shadow: rgba($yellow, .5);
-  // perspective: 1000px;
-  @keyframes ember {
-    0% {
-      transform: translate(10px ,15px);
-      opacity: .99;
-      text-shadow: -1px -1px 0 $outline, 1px -1px 0 $outline, -1px 1px 0 $outline, 1px 1px 0 $outline, 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
-    }
-    20% {
-      opacity: 0.8;
-	  	text-shadow: none;
-      transform: translate(0px ,15px);
-    }
-    40% {
-      opacity: 1;
-      text-shadow: none;
-      transform: translate(0px ,5px);
-    }
-    50% {
-      opacity: 0.6;
-      text-shadow: none;
-      transform: translate(10px ,5px);
-    }
-    100% {
-      opacity: .99;
-      transform: translate(10px ,15px);
-    }
-  }
 
-  .f {
-    // animation:  ember 20s linear infinite; /* IE 10+, Fx 29+ */
+  .bulb-position {
 
-  }
-
-  .css-selector {
-    background: linear-gradient(26deg, #1ad2a2, #000000);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 40s ease infinite;
-    -moz-animation: AnimationName 40s ease infinite;
-
-}
-
-
-@keyframes AnimationName {
-    0%{ opacity: 1; }
-    50%{ opacity: 0.8;}
-    100%{ opacity: 1;}
-}
-
-  .bulb {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    transform-origin: top center;
-    opacity: 1;
-    top: 15px;
-    left: 15px;
-    background: #ffe897;
-    box-shadow: 0px 5px 1rem 0 #030517d6;
-    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    .light-flicker {
+      // animation:  ember 20s linear infinite; /* IE 10+, Fx 29+ */
+      .bulb {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        transform-origin: top center;
+        top: 10px;
+        left: 10px;
+        z-index: -1;
 
         &:before {
-          background-color: rgba(255,255,255,1);
-          background-color: $gold;
-          background: radial-gradient(to bottom left, #ffe897, #f98a05);
-          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
           content: "";
           position: absolute;
           top: 0;
           left: 0;
           border-radius: 50%;
-          height: 20px;
-          width: 20px;
-          animation: AnimationName 2s ease infinite;
-          filter: blur(11px);
-          border-radius: 50%;
           height: 100%;
           width: 100%;
+          filter: blur(11px);
+          background: -webkit-radial-gradient(top right, #ffe897, #f97805);
         }
 
-    &.one {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      height: 10px;
-      width: 10px;
-    }
+        &.one {
+          background: -webkit-radial-gradient(top right, #ffe897, #f97805);
+          height: 12px;
+          width: 12px;
+        }
 
-    &.two {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      z-index: -1;
-      height: 15px;
-      width: 15px;
-    }
+        &.two {
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+          height: 15px;
+          width: 15px;
+        }
 
-    &.three {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      height: 15px;
-      width: 15px;
-      z-index: -1;
-    }
+        &.three {
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+          height: 15px;
+          width: 15px;
+        }
 
-    &.four {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      height: 18px;
-      width: 18px;
-      z-index: -1;
+        &.four {
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+          height: 18px;
+          width: 18px;
+        }
 
-    }
+        &.five {
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+          height: 2px;
+          width: 2px;
+        }
 
-    &.five {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      z-index: -1;
-      height: 2px;
-      width: 2px;
-    }
+        &.six {
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+          height: 18px;
+          width: 18px;
+        }
 
-    &.six {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      z-index: -1;
-      height: 18px;
-      width: 18px;
-    }
+        &.seven {
+          background: radial-gradient(to bottom left, #ffe897, #f98a05);
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+          height: 22px;
+          width: 22px;
+        }
 
-    &.seven {
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      z-index: -1;
-      height: 22px;
-      width: 22px;
-    }
+        &.eight {
+          z-index: -1;
+          height: 8px;
+          width: 8px;
+          background: radial-gradient(to bottom left, #ffe897, #f98a05);
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+        }
 
-    &.eight {
-      z-index: -1;
-      height: 8px;
-      width: 8px;
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-    }
-
-    &.nine {
-      z-index: -1;
-      height: 18px;
-      width: 18px;
-      filter: blur(0px);
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+        &.nine {
+          height: 18px;
+          width: 18px;
+          background: radial-gradient(to bottom left, #ffe897, #f98a05);
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+        }
+      }
     }
   }
-}
-
-#button-container {
-  position: relative;
-  filter: url(#filter);
-  display: inline-block;
-  margin-top: 30px;
-  cursor: grab;
-
-  // * {
-  //   will-change: filter;
-  //   transform-style: preserve-3d;
-  //   backface-visibility: hidden;
-  // }
-
-  #small-btn {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 18px;
-    border-radius: 100px;
-    color: #0e2745;
-    font-size: em(15);
-    font-family: "Monument Grotesk";
-    line-height: 1;
-    font-weight: 500;
-    overflow: hidden;
-    background-color: rgba(255,255,255,1);
-    // box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    animation: morph 2s ease-in-out infinite both alternate;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      // background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      // background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      // backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-    }
-
-
-    svg {
-      position: absolute;
-      left: 0px;
-      top: 0%;
-      margin-top: 0px;
-      animation: spin 3s linear infinite reverse;
-
-    }
-    span {
-      top: -5px;
-      position: relative;
-      z-index: 333;
-    }
-  }
-
-  @keyframes morph {
-    0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;}
-    100% {border-radius: 40% 60%;}
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(1turn);
-    }
-  }
-  #btn {
-    position: relative;
-    padding: 20px;
-    border-radius: 100px;
-    box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: scale(0.4);
-    filter: blur(120px);
-    cursor: pointer;
-    color: #0e2745;
-    font-size: em(15);
-    line-height: 1;
-    font-weight: 500;
-    overflow: hidden;
-    font-family: "Monument Grotesk";
-
-
-    &:before {
-      background-color: rgba(255,255,255,1);
-      background-color: $gold;
-      background: radial-gradient(to bottom left, #ffe897, #f98a05);
-      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-      content: "";
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-
-    }
-
-    span {
-      top: -5px;
-      position: relative;
-      z-index: 333;
-    }
-
-    svg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-    }
-  }
-}
-
-
-.bulb-orbit {
-  position: absolute;
-  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-  border-radius: 50%;
-  transform-origin: top left;
-  filter: blur(1px);
-  z-index: 0;
-  opacity: 1;
-  top: -10px;
-  left: -10px;
-  background: #474748;
-  box-shadow: #0e3152 -1px 6px 14px 14px;
-  height: 15px;
-  width: 15px;
 }
 
 
 .float-hide {
-  width: 100%;
-  position: relative;
+  position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
   height: 100%;
-  position: absolute;
+
+  .bulb-orbit {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #474748;
+    box-shadow: #0e3152 -1px 6px 14px 14px;
+    transform-origin: top left;
+    filter: blur(1px);
+    z-index: 0;
+    opacity: 1;
+
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  }
 }

@@ -1,5 +1,7 @@
 <template>
   <section id="about-section" ref="content">
+
+
     <div id="logo" ref="logo"></div>
     <svg>
       <defs>
@@ -20,21 +22,22 @@
     </div>
 
     <div id="button-container">
-      <div ref="bulbContainer" id="bulb-container">
-        <div class="float"><div class="f"><div class="bulb one"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb two"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb three"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb four"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb six"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb seven"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb eight"></div></div></div>
-        <div class="float"><div class="f"><div class="bulb nine"></div></div></div>
+      <div id="bulb-container">
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb one"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb two"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb three"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb four"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb six"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb seven"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb eight"></div></div></div>
+        <div class="bulb-position"><div class="light-flicker"><div class="bulb nine"></div></div></div>
       </div>
 
-      <div class="float-hide" ref="orbitable"><div class="bulb-orbit"></div></div>
+      <div class="float-hide" ref="orbitable">
+        <div class="bulb-orbit"></div>
+      </div>
 
       <div id="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
-
         <svg fill="none">
           <path id="path" d="M47.3,22.7c0,12.5-10.6,22.7-23.6,22.7c-6.6,0-12.6-2.6-16.9-6.9C2.6,34.4,0,28.8,0,22.7C0,10.2,10.6,0,23.6,0
           S47.3,10.2,47.3,22.7z"/> </svg>
@@ -42,7 +45,7 @@
         </div>
 
         <div id="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
-          <span class="english">Hi,&nbsp; I'm Liana I would love to hear from you.</span>
+          <span class="english">Hi! I'm Liana I would love to hear from you.</span>
         </div>
       </div>
 
@@ -88,12 +91,13 @@
 
       const title= titleConvert[0].chars;
       const paragraph = paragraphConvert[0].chars;
-      const floaters = [...document.querySelectorAll('.float')];
-      const bulbs = [...document.querySelectorAll('.float .bulb')];
+
+
+      const bulbsPosition = [...document.querySelectorAll('#bulb-container .bulb-position')];
+      const bulbs = [...document.querySelectorAll('#bulb-container .bulb')];
 
 
       this.container = document.querySelector('.js-locomotive .scroll');
-      this.a = document.querySelector('#africa');
       const _this = this;
 
       this.$ScrollTrigger.scrollerProxy(_this.container, {
@@ -110,53 +114,14 @@
         }
       });
 
-
-      const down = 'M0-0.3C0-0.3,464,156,1139,156S2278-0.3,2278-0.3V683H0V-0.3z';
-      const center = 'M0-0.3C0-0.3,464,0,1139,0s1139-0.3,1139-0.3V683H0V-0.3z';
-
-
       this.floatingaround = this.$gsap.timeline({ repeat: -1})
-
-
-      this.tl = this.$gsap.timeline({
-        scrollTrigger: {
-          scroller: this.container,
-          trigger: '#location',
-          start: '+444 bottom',
-          end: '+544 center',
-          scrub: true,
-          markers: true,
-          onEnter: self => {
-            const velocity = self.getVelocity();
-            const variation = (velocity / 3000) > 1.5 ? 1.5 : velocity / 3000;
-            this.$gsap.fromTo('#bouncy-path', {
-              morphSVG: down
-            }, {
-              delay: 0,
-              duration: 2,
-              morphSVG: center,
-              ease: `elastic.out(${1 + variation}, ${1 - (variation / 1.7)})`,
-              overwrite: 'auto'
-            });
-          }
-        }
-      });
-      //
-      // this.tl
-      // .to('#bouncy-path', {
-      //   // x: 35,
-      //   y:300,
-      //   // rotate: '360deg',
-      //   ease: 'Power1.easeInOut',
-      // })
 
       let options = {
         duration: 1.5,
       }
 
       /// intro
-      this.interoTween = this.$gsap.timeline();
-
+      this.interoTween = this.$gsap.timeline({id: 'intro'});
 
 
       this.interoTween
@@ -191,7 +156,7 @@
           return this.$gsap.utils.random(-(window.innerHeight / 2), 20)
         },
       })
-      .set(floaters, {
+      .set(bulbsPosition, {
         x: 20,
         y: 5,
         scale: 3.1,
@@ -213,7 +178,7 @@
         rotateY: '0deg',
         scale: 1,
         ease:"expo.out",
-        opacity: 1,
+        opacity: 0.3,
         duration: 1.8,
         delay: 1.4,
         stagger: (i) => {
@@ -262,63 +227,62 @@
         opacity: 1,
         duration: 1,
       },'<+0.5')
-      .to(floaters, {
+      .to(bulbsPosition , {
         scale: 1,
         x: 0,
         y: 0,
-        ease:"expo.out",
+        ease: "power4.out",
         opacity: 1,
         duration: 3,
-        rotate: '-0deg',
-        onComplete: () => {
-          this.floatingaround
-          .to('.f', {
-            x: () => {
-              this.store.nX = this.$gsap.utils.random(133, 0);
-              this.store.pX = this.store.nX
-              return this.store.pX
-            },
-            y: () => {
-              this.store.nY = this.$gsap.utils.random(133, 0);
-              this.store.pY = this.store.nY
-              return this.store.nY
-            },
-            duration: 12,
-          }).to('.f',{
-            x: this.store.pX,
-            y: this.store.pY,
-          })
-        }
-      },'<-1')
+        rotate: '0deg',
+        // onComplete: () => {
+        //   this.floatingaround
+        //   .to('.f', {
+        //     x: () => {
+        //       this.store.nX = this.$gsap.utils.random(133, 0);
+        //       this.store.pX = this.store.nX
+        //       return this.store.pX
+        //     },
+        //     y: () => {
+        //       this.store.nY = this.$gsap.utils.random(133, 0);
+        //       this.store.pY = this.store.nY
+        //       return this.store.nY
+        //     },
+        //     duration: 12,
+        //   }).to('.f',{
+        //     x: this.store.pX,
+        //     y: this.store.pY,
+        //   })
+        // }
+      },'<-1.5')
 
       /// Btn
       this.btnTween = this.$gsap.timeline( { paused: true} );
 
       this.btnTween
-      .to('.f', {
+      .to('.light-flicker', {
         x: 0,
         y: 0,
         rotate: 0,
         ease:"expo.in",
         duration: 0,
-        overwrite: 'auto'
+        ease: "power4.inOut",
       })
       .to(bulbs, {
-        x: (i) => { return i * 35 },
-        y: 0,
+        x: (i) => { return i * 20 },
+        y: 10,
         filter: 'blur(0px)',
-        ease:"expo.in",
+        ease: "power4.inOut",
         opacity: 1,
         scale: 1,
         duration: 1,
         stagger: (i) => { return i * 0.004}
       },'<-0.2')
-
       .to(this.$refs.orbitable, {
         opacity: 0,
         scale: 1,
         filter: 'blur(0px)',
-        duration: options.duration,
+        duration: 1,
         ease: "power4.inOut",
       },'<')
       .to(this.$refs.btn, {
@@ -343,6 +307,10 @@
         ease: "power4.inOut",
       },'<')
 
+      //
+      // this.$GSDevTools.create({
+      //   animation: 'intro'
+      // });
       // Btn Orbit Ball
       this.ballTwoTween = this.$gsap.timeline();
 

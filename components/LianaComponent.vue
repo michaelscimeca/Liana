@@ -17,8 +17,8 @@
         </div>
       </div>
       <div id="liana-box">
-        <div ref="liana" id="liana" class="js-load" data-scroll data-scroll-speed="-0.5"></div>
-        <div id="star-container">
+        <div id="liana" class="js-load" ref="liana" data-scroll data-scroll-speed="-0.5"></div>
+        <div id="star-container" ref="starCont">
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
@@ -39,20 +39,32 @@ export default {
     },
   },
   mounted: function() {
-    this.lianaTween = this.$gsap.timeline();
+    this.lianaTween = this.$gsap.timeline({id: "myTimeline"});
+
+    console.log(this.$refs.dotCont.children)
+
     this.lianaTween
     .set(this.$refs.lianaSection, {
       opacity: 0,
       y: 0,
     })
+    .set(this.$refs.starCont, {
+      y: 110,
+      opacity: 0.5,
+      scale: 0.4,
+      rotate: '20deg',
+    })
     .set(this.$refs.lianaCont, {
-      opacity: 0,
       scale: 0.9,
       opacity: 0,
       filter: 'blur(10px)',
     })
     .set(this.$refs.liana, {
+      filter: 'blur(10px)',
+
+      scale: 0.9,
       opacity: 0,
+      y: 0,
     })
     .set(this.$refs.dotCont.children, {
       opacity: 0,
@@ -65,19 +77,38 @@ export default {
       duration: 1.2,
       ease: "power4.inOut",
     },"<")
+    .to(this.$refs.starCont, {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      scale: 1,
+      rotate: '0deg',
+      duration: 2,
+      ease: "power4.out",
+      onComplete: () => {
+        const starsFlicker = this.$gsap.timeline({repeat:-1});
+        // starsFlicker.fromTo(this.$refs.starCont.children, {
+        //   opacity: 1,
+        //   duration: 1.5,
+        //   scale: 1,
+        //   ease: "power4.inOut",
+        // },{
+        //   opacity: 0.4,
+        //   scale: 1.1,
+        //   duration: 11,
+        //   delay: 1.5,
+        //   ease: "power4.inOut",
+        // })
+
+      }
+    },"<=-1.2")
     .to(this.$refs.lianaCont, {
       scale: 1,
       filter: 'blur(0px)',
       opacity: 1,
       duration: 2,
       ease: "power4.inOut",
-    },"<")
-    .to(this.$refs.liana, {
-      filter: 'blur(0px)',
-      opacity: 1,
-      duration: 1,
-      ease: "power4.inOut",
-    },"<")
+    },"<+0.1")
     .to(this.$refs.dotCont.children, {
       opacity: 1,
       duration:1,
@@ -121,6 +152,19 @@ export default {
         })
       }
     },"<+0.5")
+    .to(this.$refs.liana, {
+      filter: 'blur(0px)',
+      opacity: 1,
+      duration: 1.2,
+      y: 0,
+      scale: 1,
+      ease: "power4.out",
+    },"<+0.6")
+
+  // this.$GSDevTools.create({
+  //   animation: 'myTimeline'
+  // });
+
   },
   beforeDestroy: function() {}
 };

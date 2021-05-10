@@ -1,0 +1,101 @@
+#button-container {
+  position: relative;
+  filter: url(#filter);
+  display: inline-block;
+  margin-top: 30px;
+  cursor: grab;
+
+  // * {
+  //   will-change: filter;
+  //   transform-style: preserve-3d;
+  //   backface-visibility: hidden;
+  // }
+
+  #small-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 18px;
+    border-radius: 100px;
+    color: #0e2745;
+    font-size: em(15);
+    font-family: "Monument Grotesk";
+    line-height: 1;
+    font-weight: 500;
+    overflow: hidden;
+    background-color: rgba(255,255,255,1);
+    display: inline-block;
+    animation: morph 2s ease-in-out infinite both alternate;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+    svg {
+      position: absolute;
+      left: 0px;
+      top: 0%;
+      margin-top: 0px;
+      animation: spin 3s linear infinite reverse;
+
+    }
+    span {
+      top: -5px;
+      position: relative;
+      z-index: 333;
+    }
+  }
+
+  @keyframes morph {
+    0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;}
+    100% {border-radius: 40% 60%;}
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  #btn {
+    position: relative;
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    color: #0e2745;
+    font-size: em(15);
+    line-height: 1;
+    font-weight: 500;
+    font-family: "Monument Grotesk";
+
+    opacity: 0;
+    transform: scale(0.4);
+    filter: blur(120px);
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255,255,255,1);
+      background-color: $gold;
+      background: radial-gradient(to bottom left, #ffe897, #f98a05);
+      background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+      backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    }
+
+    span {
+      position: relative;
+      top: -5px;
+      z-index: 333;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
