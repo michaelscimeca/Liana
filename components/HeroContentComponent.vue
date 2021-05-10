@@ -1,7 +1,6 @@
 <template>
   <section id="about-section" ref="content">
 
-
     <div id="logo" ref="logo"></div>
     <svg>
       <defs>
@@ -22,6 +21,8 @@
     </div>
 
     <div id="button-container">
+      <!-- <div id="form-ball" ref="formBall"></div> -->
+
       <div id="bulb-container">
         <div class="bulb-position"><div class="light-flicker"><div class="bulb one"></div></div></div>
         <div class="bulb-position"><div class="light-flicker"><div class="bulb two"></div></div></div>
@@ -38,6 +39,7 @@
       </div>
 
       <div id="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
+
         <svg fill="none">
           <path id="path" d="M47.3,22.7c0,12.5-10.6,22.7-23.6,22.7c-6.6,0-12.6-2.6-16.9-6.9C2.6,34.4,0,28.8,0,22.7C0,10.2,10.6,0,23.6,0
           S47.3,10.2,47.3,22.7z"/> </svg>
@@ -96,9 +98,11 @@
       const bulbsPosition = [...document.querySelectorAll('#bulb-container .bulb-position')];
       const bulbs = [...document.querySelectorAll('#bulb-container .bulb')];
 
-      const formBall = document.querySelector('#form-ball');
+      const formBall = document.querySelector(".bulb-orbit");
       const press = document.querySelector("#btn");
-
+      // press.addEventListener('click', () => {
+      //   this.ballTwoTween.pause();
+      // })
       this.container = document.querySelector('.js-locomotive .scroll');
       const _this = this;
 
@@ -122,9 +126,7 @@
         duration: 1.5,
       }
 
-      /// intro
       this.interoTween = this.$gsap.timeline({id: 'intro'});
-
 
       this.interoTween
       .set(this.$refs.logo, {
@@ -165,20 +167,10 @@
         opacity: 0,
         rotate: '-145deg',
       })
-      .set(this.$refs.orbitable, {
-        opacity: 0,
-        scale: 0.8,
-      })
       .set(this.$refs.smallBtn, {
         x: 20,
         y: 0,
         opacity: 0,
-      })
-      .set(formBall, {
-        x: press.getBoundingClientRect().x - (press.getBoundingClientRect().width  /2 ),
-        y: press.getBoundingClientRect().y,
-        opacity: 0,
-        filter: 'blur(10px)',
       })
       .to(this.$refs.logo, {
         x: 0,
@@ -235,6 +227,7 @@
         opacity: 1,
         duration: 1,
       },'<+0.5')
+
       .to(bulbsPosition , {
         scale: 1,
         x: 0,
@@ -263,8 +256,10 @@
         //   })
         // }
       },'<-1.5')
-
-
+      .to(formBall, {
+        opacity: 1,
+        duration: 1,
+      })
 
       /// Btn
       this.btnTween = this.$gsap.timeline( { paused: true} );
@@ -336,6 +331,10 @@
           alignOrigin: [0.5, 0.5]
         }
       });
+
+      // press.addEventListener('click', () => {
+      //   this.ballTwoTween.pause();
+      // })
     },
     beforeDestroy: function () {
     }

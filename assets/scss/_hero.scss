@@ -1,14 +1,13 @@
 #form-ball {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
+  top: 10px;
+  left: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   background: -webkit-radial-gradient(top right, #ffe897, #f97805);
   box-shadow: 1px 5px 29px 5px rgba(0,0,0,0.31);
 }
-
 
 #hero {
   > .row {

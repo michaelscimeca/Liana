@@ -1,10 +1,5 @@
 <template>
   <section :class="containerClasses">
-    <div id="form-ball" ref="formBall"></div>
-
-    <HeroComponent />
-    <AfricaComponent/>
-
     <div id="form-section" ref="formSection">
       <div id="form-container" ref="formCont">
         <div id="cloud-one" ref="cloudOne"></div>
@@ -14,6 +9,10 @@
         </div>
       </div>
     </div>
+    <HeroComponent />
+    <AfricaComponent/>
+
+
   </section>
 </template>
 
@@ -92,15 +91,16 @@ export default {
   created: function () {},
   mounted: function () {
     this.formTweenSet = this.$gsap.timeline();
-    this.formTween = this.$gsap.timeline({ paused: true, id: 'intros' });
+    this.formTween = this.$gsap.timeline({ paused: true, id: 'intros', overwrite: "auto" });
     const press = document.querySelector("#btn");
     const form = document.querySelector("#form-container");
-    console.log( press.getBoundingClientRect().top)
+    const formBall = document.querySelector(".bulb-orbit");
+
+    // console.log( press.getBoundingClientRect().top)
     press.addEventListener('click', () => {
       this.formTween.play();
     })
-
-    console.log()
+    // console.log()
 
     this.formTweenSet
     .set(this.$refs.formSection, {
@@ -126,17 +126,17 @@ export default {
       y: -120,
       rotateY: '12deg',
     })
-
     this.formTween
-    .to(this.$refs.formBall, {
-      x: form.getBoundingClientRect().x + (form.getBoundingClientRect().width / 2),
-      y: -30,
-      scale:1,
+    .to(formBall, {
+      x: (formBall.getBoundingClientRect().x  - (formBall.getBoundingClientRect().width / 2)) - form.getBoundingClientRect().y,
+      y: form.getBoundingClientRect().y - formBall.getBoundingClientRect().y,
+      scale: 1,
       opacity: 1,
       ease:"expo.out",
       duration: 1,
       zIndex: 4,
-      filter: 'blur(0px)',
+      width: '30px',
+      height: '30px',
     })
     .to(['#about-section'], {
       filter: 'blur(20px)',
@@ -154,13 +154,12 @@ export default {
       x: 0,
       duration: 1.8,
     })
-    .to(this.$refs.formBall, {
+    .to(formBall, {
       x: form.getBoundingClientRect().x + (form.getBoundingClientRect().width / 2),
       y: 0,
       scale: 1.1,
       ease: "power4.inOut",
       duration: 1.8,
-      zIndex: 4
       },'<')
     .to(this.$refs.formSection, {
       x: 0,
@@ -170,6 +169,7 @@ export default {
       ease:"expo.out",
       opacity: 1,
       duration: 1.8,
+      zIndex: 4333
       },'<')
     .to(this.$refs.formCont, {
       x: 0,
@@ -180,7 +180,6 @@ export default {
       duration: 6,
       rotate: '0deg',
     },'<')
-
     .to(this.$refs.cloudOne, {
       x: 0,
       y: 0,
@@ -203,6 +202,7 @@ export default {
     this.$GSDevTools.create({
       animation: 'intros'
     });
+
     this.$nextTick(() => {
       this.$nuxt.$emit('update-locomotive');
     });

@@ -82,8 +82,7 @@
         &.nine {
           height: 18px;
           width: 18px;
-          background: radial-gradient(to bottom left, #ffe897, #f98a05);
-          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+
         }
       }
     }
@@ -105,8 +104,9 @@
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background: #474748;
-    box-shadow: #0e3152 -1px 6px 14px 14px;
+    background: radial-gradient(to bottom left, #ffe897, #f98a05);
+    background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
+  box-shadow: #0e3152 -1px 6px 14px 14px;
     transform-origin: top left;
     filter: blur(1px);
     z-index: 0;
