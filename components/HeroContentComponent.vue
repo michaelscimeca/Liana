@@ -96,6 +96,8 @@
       const bulbsPosition = [...document.querySelectorAll('#bulb-container .bulb-position')];
       const bulbs = [...document.querySelectorAll('#bulb-container .bulb')];
 
+      const formBall = document.querySelector('#form-ball');
+      const press = document.querySelector("#btn");
 
       this.container = document.querySelector('.js-locomotive .scroll');
       const _this = this;
@@ -171,6 +173,12 @@
         x: 20,
         y: 0,
         opacity: 0,
+      })
+      .set(formBall, {
+        x: press.getBoundingClientRect().x - (press.getBoundingClientRect().width  /2 ),
+        y: press.getBoundingClientRect().y,
+        opacity: 0,
+        filter: 'blur(10px)',
       })
       .to(this.$refs.logo, {
         x: 0,
@@ -255,6 +263,8 @@
         //   })
         // }
       },'<-1.5')
+
+
 
       /// Btn
       this.btnTween = this.$gsap.timeline( { paused: true} );
