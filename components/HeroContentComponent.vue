@@ -414,74 +414,74 @@ export default {
       paused: true
     });
 
-    // this.btnTween
-    //   .to('.light-flicker', {
-    //     x: 0,
-    //     y: 0,
-    //     rotate: 0,
-    //     ease: "expo.in",
-    //     duration: 0,
-    //     ease: "power4.inOut",
-    //   })
-    //   .to(bulbs, {
-    //     x: (i) => {
-    //       return i * 20
-    //     },
-    //     y: 10,
-    //     filter: 'blur(0px)',
-    //     ease: "power4.inOut",
-    //     opacity: 1,
-    //     scale: 1,
-    //     duration: 1,
-    //     stagger: (i) => {
-    //       return i * 0.004
-    //     }
-    //   }, '<-0.2')
-    //   .to(this.$refs.orbitable, {
-    //     opacity: 0,
-    //     scale: 1,
-    //     filter: 'blur(0px)',
-    //     duration: 1,
-    //     ease: "power4.inOut",
-    //   }, '<')
-    //   .to(this.$refs.btn, {
-    //     opacity: 1,
-    //     scale: 1,
-    //     filter: 'blur(0px)',
-    //     duration: options.duration,
-    //     ease: "power4.inOut",
-    //   }, '<')
-    //   .to(this.$refs.btn, {
-    //     opacity: 1,
-    //     scale: 1,
-    //     filter: 'blur(0px)',
-    //     duration: options.duration,
-    //     ease: "power4.inOut",
-    //   }, '<')
-    //   .to(this.$refs.smallBtn, {
-    //     scale: 1,
-    //     opacity: 1,
-    //     duration: 3,
-    //     backgroundColor: '#b7894a',
-    //     ease: "power4.inOut",
-    //   }, '<')
+    this.btnTween
+      .to('.light-flicker', {
+        x: 0,
+        y: 0,
+        rotate: 0,
+        ease: "expo.in",
+        duration: 0,
+        ease: "power4.inOut",
+      })
+      .to(bulbs, {
+        x: (i) => {
+          return i * 20
+        },
+        y: 10,
+        filter: 'blur(0px)',
+        ease: "power4.inOut",
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        stagger: (i) => {
+          return i * 0.004
+        }
+      }, '<-0.2')
+      .to(this.$refs.orbitable, {
+        opacity: 0,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: 1,
+        ease: "power4.inOut",
+      }, '<')
+      .to(this.$refs.btn, {
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: options.duration,
+        ease: "power4.inOut",
+      }, '<')
+      .to(this.$refs.btn, {
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
+        duration: options.duration,
+        ease: "power4.inOut",
+      }, '<')
+      .to(this.$refs.smallBtn, {
+        scale: 1,
+        opacity: 1,
+        duration: 3,
+        backgroundColor: '#b7894a',
+        ease: "power4.inOut",
+      }, '<')
 
     const bulbOrbit = this.$gsap.utils.toArray('.float-hide');
 
-    bulbOrbit.forEach(orbit => {
-      this.$gsap.to(orbit, {
-        duration: 11,
-        repeat: -1,
-        delay: 0,
-        ease: "linear",
-        motionPath: {
-          path: orbit.querySelector('.path'),
-          align: orbit.querySelector('.path'),
-          autoRotate: false,
-          alignOrigin: [0.5, 0.5]
-        }
-      });
-    });
+    // bulbOrbit.forEach(orbit => {
+    //   this.$gsap.to(orbit, {
+    //     duration: 11,
+    //     repeat: -1,
+    //     delay: 0,
+    //     ease: "linear",
+    //     motionPath: {
+    //       path: orbit.querySelector('.path'),
+    //       align: orbit.querySelector('.path'),
+    //       autoRotate: false,
+    //       alignOrigin: [0.5, 0.5]
+    //     }
+    //   });
+    // });
   },
   beforeDestroy: function() {}
 };

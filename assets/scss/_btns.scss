@@ -11,11 +11,14 @@
   transform-origin: top center;
   // font-family: "Southam Demo";
   font-family: "pulp display";
+  background-color: red;
+  height: 100%;
 
   .small-btn {
     position: absolute;
-    top: 1px;
+    top: 0;
     left: 0;
+    padding: 20px;
     // height: 50px;
     // width: 50px;
     border-radius: 100px;
@@ -34,33 +37,18 @@
 
     span {
       position: relative;
-      // top: -10px;
-      // left: -8px;
       z-index: 333;
       font-size: 12px;
       color: #0e2745;
       line-height: 1;
       font-weight: bold;
       display: inline-block;
-      // &:before {
-      //   content: 'Hi!';
-      //   top: -2px;
-      //   left: -2px;
-      //   position: absolute;
-      //   z-index: 333;
-      //   font-size: inherit;
-      //   font-weight: inherit;
-      //   -webkit-text-stroke: 4px white;
-      //   z-index: -1;
-      //   font-size: 71px;
-      //   text-shadow: #0f2642 1px 7px 8px;
-      // }
     }
   }
 
   .btn {
     position: relative;
-    padding: 20px;
+    padding: 10px 15px;
     border-radius: 100px;
     box-shadow: 3px 15px 1rem 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -70,7 +58,6 @@
     line-height: 1;
     font-weight: 500;
     opacity: 0;
-    transform: scale(0.7);
     filter: blur(40px);
     cursor: pointer;
 
