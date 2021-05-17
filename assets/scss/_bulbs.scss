@@ -1,9 +1,8 @@
-#bulb-container {
+.bulb-container {
   position: relative;
   width: 100%;
 
   .bulb-position {
-
     .light-flicker {
       // animation:  ember 20s linear infinite; /* IE 10+, Fx 29+ */
       .bulb {
@@ -82,21 +81,21 @@
         &.nine {
           height: 18px;
           width: 18px;
-
+          background: radial-gradient(to bottom left, #ffe897, #f98a05);
+          background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
         }
       }
     }
   }
 }
 
-
 .float-hide {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
   height: 100%;
-
+  // height: 50px;
+  // width: 50px;
   .bulb-orbit {
     position: absolute;
     top: -10px;
@@ -106,12 +105,20 @@
     border-radius: 50%;
     background: radial-gradient(to bottom left, #ffe897, #f98a05);
     background: -webkit-radial-gradient(top right, #ffe897, #f98a05);
-  box-shadow: #0e3152 -1px 6px 14px 14px;
+    box-shadow: #0e3152 -1px 6px 14px 14px;
     transform-origin: top left;
     filter: blur(1px);
     z-index: 0;
     opacity: 1;
-
     backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  }
+
+  svg {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
 }

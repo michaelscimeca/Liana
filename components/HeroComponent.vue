@@ -1,21 +1,13 @@
 <template>
-  <section id="hero" ref="hero">
-    <div class="row">
-      <main class="small-5 column">
-        <LianaComponent/>
-      </main>
-      <aside class="small-7 column">
-        <HeroContentComponent/>
-      </aside>
-    </div>
-  </section>
+<section id="hero" ref="hero">
+  <LianaComponent />
+</section>
 </template>
 <script>
 import LianaComponent from '~/components/LianaComponent.vue';
-import HeroContentComponent from '~/components/HeroContentComponent.vue';
 
 export default {
-  data () {
+  data() {
     return {
       tl: null,
       messageTl: null,
@@ -26,28 +18,27 @@ export default {
   },
   components: {
     LianaComponent,
-    HeroContentComponent
+    // HeroContentComponent
   },
-  computed : {
-    message: function () {
+  computed: {
+    message: function() {
       return this.$store.state.stickyNote.message;
     },
-    index: function () {
+    index: function() {
       return this.$store.state.stickyNote.index;
     },
-    color: function () {
+    color: function() {
       return this.$store.state.stickyNote.color;
     }
   },
   methods: {
-    onMouseLeave () {},
-    onMouseEnter () {},
+    onMouseLeave() {},
+    onMouseEnter() {},
   },
-  mounted: function () {
+  mounted: function() {
 
   },
-  beforeDestroy: function () {
-  }
+  beforeDestroy: function() {}
 };
 </script>
 

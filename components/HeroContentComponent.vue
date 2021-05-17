@@ -1,153 +1,330 @@
 <template>
-  <section id="about-section" ref="content">
+<div class="content">
+  <svg>
+    <defs>
+      <filter id="filter" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blurred" />
+        <feColorMatrix in="blurred" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+      </filter>
+    </defs>
+  </svg>
 
-    <div id="logo" ref="logo"></div>
-    <svg>
-      <defs>
-        <filter id="filter" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blurred"/>
-          <feColorMatrix in="blurred" type="matrix"  values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo"/>
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
+  <div id="name-container">
+    <svg version="1.1" id="name" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1088.7 372.7" style="enable-background:new 0 0 1088.7 372.7;" xml:space="preserve">
+      <g>
+        <path d="M262.6,183.7c-0.9-2.4-2.3-4-4.3-4.9c-2-0.9-3.9-0.6-5.8,1c-1.9,1.5-3.1,4.8-3.7,9.6c-0.2,2.2-0.5,3.9-1,5
+          c-0.4,1.1-1.3,2.6-2.5,4.5c-6.3,8.5-17.6,18.5-34,29.9c-16.4,11.5-33.3,21.2-50.7,29.3c-4.2,1.9-9.8,4.1-16.6,6.5
+          c-6.8,2.4-13.1,4.5-18.9,6.2c-4.5,1.3-10.2,2.7-17.4,4.1c-7.1,1.5-14.3,2.9-21.6,4.1c-7.3,1.3-13.4,2.2-18.5,2.9
+          c-5,0.6-7.6,0.7-7.6,0.3c0-1.7,4.7-11.2,14.2-28.7c10.1-18.9,21.8-42,35.2-69.2c13.4-27.3,24.7-53.9,33.9-79.9
+          c1-2.8,2.3-7.2,4.1-13.3c1.8-6.1,3.6-12.9,5.3-20.3c1.8-7.4,3.1-14.6,4.1-21.5c1-6.9,1.2-12.6,0.6-17.2c-0.6-4.6-2.5-6.8-5.7-6.8
+          c-3,0-4.9,1.2-5.7,3.5c-0.8,2.3-0.6,5.5,0.6,9.4c0.5,2.9-0.2,9.3-2.1,19.3c-1.9,10-4.6,21-8,33.1c-8.3,28.8-21.1,62.5-38.5,101.1
+          c-4.7,10.2-10.4,22.2-17.3,36c-6.8,13.8-13.2,26.2-19,37.2c-5.8,11-9.5,17.5-11,19.4c-0.3,0.3-0.9,0.7-1.8,1.2
+          c-0.9,0.5-1.9,0.9-2.9,1.2c-8.1,2.5-16.3,7.9-24.7,15.9C15,309,9.8,315.3,6,321.5c-3.9,6.2-5.9,11.5-6,15.8c0.1,1.7,0.6,3.4,1.4,5
+          c0.9,1.6,1.9,2.9,3,3.7c4.6,2.4,9.5,1.4,14.9-3.3c5.4-4.6,10.7-10.9,16.1-18.8c5.4-7.9,10.3-15.6,14.7-23.2
+          c1.2-1.9,2.3-3.7,3.3-5.4l4-1.3c0.7-0.3,2.1-0.7,4.1-1c2-0.4,4.2-0.8,6.6-1.4c2.9-0.5,5.6-1.1,8.1-1.6c39.1-8,70.1-17.9,93.3-29.8
+          c19.4-9.9,38.3-21.6,56.7-35.3c18.4-13.7,30.1-24.8,35.3-33.3C263.1,188.8,263.5,186.1,262.6,183.7z M32.9,312
+          c-1.8,2.3-3.7,4.8-6,7.3s-4.2,4.7-5.9,6.4c-5.1,4.3-4.4,2.4,2.1-5.7c1.8-2.2,3.6-4.4,5.5-6.4c1.9-2,3.5-3.6,4.9-4.9
+          c1.4-1.2,2.1-1.6,2.1-1.2C35.5,308.2,34.6,309.7,32.9,312z" />
+        <path d="M280.5,175.9c2.1,1.2,4.2,1.4,6.2,0.8c2-0.6,3.6-2.1,4.8-4.3c1.5-2.9,1.6-5.6,0.3-8.1c-1.5-2.8-3.7-4.1-6.7-4.1
+          c-2.5,0-4.6,1-6,3.1c-1.5,2.1-2.1,4.3-2,6.8C277.2,172.5,278.4,174.5,280.5,175.9z" />
+        <path d="M731.6,59.6c5.6-5.1,9.6-8.4,11.9-10c1.5-1.1,3.3-1.6,5.4-1.6c6-0.2,9.1-3.2,9.1-9.1c0-3.9-1.9-5.9-5.7-5.9s-6.8,2-8.9,6
+          c-1,2-5.3,6.5-12.9,13.5c-23.7,21.9-40.4,37.8-50.3,47.8c-55.8,56.8-97.8,112.6-126.1,167.5c-4.8,8.8-7.4,13.4-7.8,13.8
+          c-0.2-0.5-0.8-17.9-1.7-52.2c3.5-2.7,7.1-5.7,10.7-8.8c4.1-3.6,6.7-5.6,7.6-6c2.1-1.3,3.2-3.7,3.2-7.2c0-1.2-0.2-2.4-0.6-3.7
+          c-0.9-2-2.3-3-4.3-3c-1.2,0-2.4,0.5-3.7,1.4s-1.9,2.7-1.9,5.2c0,2.5-1,5-2.9,7.5c-1.7,2.2-4.5,4.9-8.4,8.1l-0.8-20
+          c-0.7-15.6-1.4-32.5-1.9-50.8l-1.4-35.5c-0.2-6.2-0.4-10.9-0.6-14.2l-0.5-22c0-3.8,0.1-6.1,0.4-6.9c0.3-0.8,0.7-1.5,1.2-2.1
+          c1-1.4,1.4-2.9,1.4-4.5c0-6.6-0.7-12.5-2.1-17.7c-1.6-6.2-3.8-9.4-6.7-9.7h-1.6c-2.2,0-3.8,1.1-4.8,3.2c-0.5,1.5-0.8,4.4-0.8,8.6
+          c0,6.2,0.1,10.6,0.2,13.4c0.2,2.8,0.6,4.7,1.4,5.9c1,1.6,1.6,4.8,2.1,9.7c1.4,14.9,2.9,41.1,4.6,78.6l0.5,10
+          c1,19.3,1.9,39,2.7,59.1c-10.3,7.6-17.6,11.4-21.9,11.4c-1.5,0-2.8-0.6-3.8-1.9c-1.5-1.7-2.2-4-2.2-6.8c0-4.2,1.1-9.8,3.2-16.7
+          c0.6-2,1.3-3.6,1.9-5c1.3-1.1,2.1-2.5,2.5-4.1c0.7-1.6,1-3.6,1-6.3c0-1.3-0.2-2.2-0.6-2.9c-2.8-4.1-6.9-6.2-12.4-6.2
+          c-8.7,0-17.1,4.6-25.2,13.8c-4.4,5.8-6.5,11-6.5,15.6c0,1.7,0.3,3.3,0.8,4.8c0.2,0.5,0.5,1,0.8,1.4c-0.9,0.5-1.8,1-2.7,1.5
+          c-8.8,4.8-15,6.5-18.6,5.2c-3.6-1.3-6.4-7.1-8.3-17.3c-1.6-8.1-4.5-12.4-8.6-13.1c-1.6-0.2-3.8,0.4-6.7,1.8
+          c-2.9,1.4-5.9,3.5-9.2,6.1c-3.8,3.1-8,6.8-12.7,11.3c-4.6,4.5-8.4,8.3-11.4,11.6c-1.4,1.6-2.5,2.9-3.5,3.9c-1,1-1.5,1.5-1.6,1.5
+          c0-0.1,0.4-1,1.1-2.7c0.7-1.7,1.6-3.8,2.7-6.2c1.2-2.5,2.1-4.7,2.9-6.5c0.8-1.8,1.2-2.8,1.2-2.9c0-0.2,0.2-0.6,0.7-1.3
+          c0.5-0.6,1-1.3,1.7-2.1c1.9-2.1,3.1-4.5,3.5-7.2c0.4-2.7,0.1-5-0.9-7.1c-0.8-1.5-1.9-2.5-3.5-2.9c-0.8-0.8-1.8-1.2-3.1-1.2
+          c-1.2,0-2.4,0.5-3.7,1.4c-1.1,0.8-1.7,2.2-1.9,4.1c-1.1,2-1.6,4.2-1.5,6.3c-0.4,0.7-0.9,1.5-1.4,2.2c-1.9,2.5-5.3,5.7-10,9.5
+          C366.9,231.9,357.9,237,353,237c-1.5,0-2.8-0.6-3.8-1.9c-1.5-1.7-2.2-4-2.2-6.8c0-4.2,1.1-9.8,3.2-16.7c1-3.3,2.2-5.7,3.4-7.3
+          c0.9-0.8,1.6-1.6,2.1-2.4c0.8-1.5,1.2-3.2,1-5c-0.2-1.9-0.8-3.4-2-4.5c-0.5-0.3-1-0.6-1.5-0.9c-2.7-2.8-6.2-4.2-10.7-4.2
+          c-8.7,0-17.1,4.6-25.2,13.8c-4.3,5.8-6.5,11-6.5,15.6c0,1.7,0.3,3.3,0.8,4.8c0.5,1.2,1.2,2.1,1.9,2.8c-20.2,15.1-34.1,23-41.6,23.7
+          c-1.7,0.1-2.9,0.1-3.5-0.1c-0.6-0.2-1.2-0.5-1.8-1c-3.2-3.7-2.2-12.4,2.9-26.1c1.9-5.2,3.5-9,4.9-11.4c1.3-2.4,2.6-3.8,3.7-4.4
+          c2.1-1.2,3.6-3.3,4.3-6.3c0.7-3,0.5-5.5-0.6-7.6c-1.2-1.7-2.8-2.7-4.9-2.9c-2.1-0.3-3.8,0.3-5.3,1.7c-1.2,1.1-2.2,2.7-3,4.8
+          c-0.9,2.1-1.3,4.1-1.3,5.9c0,1.6-0.4,3.8-1.1,6.7c-0.7,2.9-2,7-3.7,12.4c-1.2,3.7-2.1,7.5-2.9,11.2c-0.7,3.8-1.1,6.7-1.1,8.8
+          c0,1.9,0.3,3.9,1,6c0.7,2.1,1.6,3.8,2.6,4.9c0.4,0.5,1,1,1.8,1.5c0.8,0.5,1.6,0.9,2.3,1.2c1.4,0.5,2.7,0.8,3.8,0.8
+          c1.2,0,2.8-0.3,4.8-0.8c7.6-1.5,23.8-11.2,48.5-29.1c4.1-1.8,9.1-5.4,14.9-10.6c0.8-0.7,1.5-1.4,2.2-1.9c0.9-0.6,1.7-1.1,2.4-1.6
+          c0.6-0.4,1.2-0.7,1.7-1c-2,7.5-3.1,13.7-3.1,18.5c0,6.7,2.2,11.2,6.7,13.5c1.1,0.5,2.6,0.8,4.6,0.8c2.1,0,4.1-0.3,6-1
+          c3.3-1,8.1-3.6,14.3-7.9c5.7-3.9,11.5-8.4,17.4-13.4c-0.6,1.8-1.4,4.2-2.4,7.2c-1.3,3.6-2.9,8.3-4.9,14.2
+          c-2.8,7.4-3.4,11.8-1.9,13.2c0.4,0.5,1.1,0.9,2.1,1c1,0.1,1.9-0.1,2.8-0.6c0.4-0.2,1.5-1.2,3.1-3.1c1.6-1.9,3.5-4.1,5.7-6.8
+          c4.3-5.1,8.9-10.1,13.8-15c4.8-4.9,9.2-9,13-12.2c2.9-2.2,5.7-4.3,8.4-6.1c2.7-1.9,4.4-2.8,5-2.8c1.2,0,2.5,3.2,4,9.7
+          c2,8.6,4.4,14.2,7.2,16.7c2.9,2.7,6,4,9.6,4c5.1,0,14.6-3.8,28.4-11.2c2.8-0.9,6-2.7,9.7-5.5c4-2.3,8.2-4.9,12.8-7.7
+          c-1.6,6.3-2.3,11.5-2.3,15.7c0,6.7,2.2,11.2,6.7,13.5c1.1,0.5,2.6,0.8,4.6,0.8c2.1,0,4.1-0.3,6-1c3.3-1,8.1-3.6,14.3-7.9
+          c0.6-0.4,1.3-0.9,1.9-1.4c0.8,20.1,1.6,40.5,2.3,61.3c-7.1,17.7-11.5,29.2-13.1,34.4c-1.5,4.6-2.2,8-2.2,10.2c0,3.1,1.3,5.4,4,6.8
+          c1.3,0.7,2.5,1.1,3.7,1.1c3.2,0,6.5-1.9,9.9-5.6c1.9-2,3.1-3.9,3.7-5.6c0.1-0.5,0.4-1.3,0.8-2.4c3.7-9.7,5.6-20,5.6-30.9v-3
+          c0-3.5,0.3-6.3,0.8-8.4c0.4-1.7,2.4-6.6,6-14.6c16.3-35.5,39.2-71.9,68.4-109.2C658.8,129.4,693.4,93.1,731.6,59.6z M340.5,198.9
+          c0,3-6.7,9.6-20,20c-1.1,0.5-2,0.8-2.7,0.8c-1,0-1.4-0.6-1.4-1.8c0-1.4,0.6-3.4,1.8-6c2.3-5.4,6.5-10.1,12.6-14
+          c3-1.9,5.4-2.9,7.2-2.9c1.7,0,2.6,0.7,2.8,2.2C340.6,197.7,340.5,198.3,340.5,198.9z M503.1,203.7c-0.1,0.1-0.2,0.3-0.2,0.4
+          c-2.2,3.1-5.7,6.6-10.7,10.4c-3.5,2.7-7.3,5.2-11.4,7.8c0,0-0.1,0-0.1,0c-1,0-1.4-0.6-1.4-1.8c0-1.4,0.6-3.4,1.8-6
+          c2.3-5.4,6.5-10.1,12.6-14c3-1.9,5.4-2.9,7.2-2.9c1.9,0,2.9,1,2.9,2.9C503.6,201.9,503.4,202.9,503.1,203.7z" />
+        <path d="M602.9,274.7c-2.5-0.3-4.7,0.5-6.5,2.3c-3.1,3.5-3.1,6.8,0,10c0.7,0.7,1.4,1.2,2.1,1.5c0.6,0.3,1.5,0.4,2.7,0.4
+          c3.5,0,6-1.4,7.5-4.1c0.5-1.3,0.8-2.4,0.8-3.4c0-1-0.3-2-0.8-3.1C607.3,276.2,605.4,275,602.9,274.7z" />
+        <path d="M824,178.2c-5.4-5.9-14.4-6.7-26.9-2.2c-1.5,0.4-2.7,0.8-3.7,1c-1,0.3-1.6,0.3-1.8,0.2c-0.1-0.2,0.3-0.9,1.4-2.1
+          c1-1.2,2.3-2.7,3.9-4.4c42.9-47.1,65.2-83.4,67-108.7c0.2-2.4,0.3-4.3,0.2-5.7c-0.1-1.4-0.4-2.8-0.8-4.1
+          c-3.1-9.3-10.6-14.2-22.6-14.6c-12-0.4-27.8,3.7-47.3,12.2c-2.2,1-4.4,1.9-6.4,2.8c-2.1,0.9-3.6,1.6-4.5,2c-1,0.4-2.4,1.1-4.2,2.1
+          c-1.9,1-3.8,2-5.8,3.1c-2,1.1-3.8,2.1-5.3,2.9c-1.5,0.9-2.3,1.4-2.4,1.6c-0.2,0.2-1.2,0.9-2.9,2.1c-1.7,1.2-3.8,2.5-6.2,4.1
+          c-20.9,14-39.9,29.5-57.1,46.5c-17.1,17-29.1,32.3-35.9,45.8c-4.6,9-5.3,16.1-2.1,21.3c3.6,7.1,14.3,10.1,32.2,9.1
+          c6.4-0.5,10.3-2.3,11.7-5.3c1.4-3,0.7-5.9-2.1-8.9c-1.5-0.7-2.9-1-4.1-0.9c-1.3,0.2-2.9,0.8-4.9,1.8c-5.2,2.4-10.7,3.7-16.4,3.7
+          c-12.9,0-14.5-8.2-4.6-24.7c10.1-16.2,25.2-33.5,45.4-51.7c20.2-18.2,39.9-32.4,59.1-42.7c2.3-1.2,4.7-2.4,7-3.6
+          c2.3-1.2,4.1-2.2,5.4-2.9c5.3-2.9,12-5.7,20-8.4c8-2.8,14.9-4.6,20.8-5.6c15.7-2.1,25,1,27.9,9.4c1.5,6.5,0.4,14.8-3.3,25
+          c-1.9,5.2-4.6,11-8.1,17.3c-3.5,6.3-6.8,11.8-10,16.3c-8.3,11.4-12.7,17.5-13.2,18.5c-0.3,0.7-2.1,3.1-5.3,7
+          c-3.2,3.9-7.1,8.5-11.6,13.7c-4.5,5.2-8.8,10.1-13,14.8c-5,5.5-8.9,9.7-11.6,12.7c-2.8,2.9-5,5-6.7,6.4c-1.7,1.3-3.5,2.6-5.4,3.7
+          c-11.2,6.5-22.4,14.4-33.6,23.7c-1.4,1.2-2.6,2.1-3.6,2.9c-1,0.7-1.6,1.1-1.7,1.1c0-0.8,2.8-7.2,8.3-19.2
+          c5.5-11.9,12.4-26.4,20.5-43.4c3.6-7.7,6.4-13.8,8.5-18.3c2.1-4.5,3.5-7.8,4.3-10c0.8-2.2,1.1-3.9,1-4.9c-0.2-1.1-0.7-2-1.5-2.9
+          c-3-4-7.3-3-13.1,3.2c-3.9,4-6.6,7.3-8,9.9c-1.4,2.5-1.7,4.8-1,6.8c0.3,1.2,1,2.3,2,3.4c1,1.1,2,1.9,2.9,2.3c0.2,0,0.2,0.3,0.1,0.9
+          c-0.2,0.6-0.5,1.6-1.1,3.2c-0.6,1.5-1.5,3.7-2.7,6.6c-1.2,2.9-2.8,6.6-4.8,11.2c-2,4.6-4.4,10.3-7.4,17.1
+          c-11.9,27.1-18,41.5-18.5,43.5c-0.2,0.3-0.6,1-1.2,2.1c-0.6,1.1-1.3,2.2-2.1,3.3c-1.8,2.7-3,4.8-3.7,6.4s-0.8,3.1-0.5,4.6
+          c0.1,1,0.1,2-0.2,3.2c-0.2,1.2-0.6,2.8-1.3,4.8c-5.2,14.6-7.8,25.5-7.8,32.6c-0.1,3,0.1,5.1,0.6,6.4c0.5,1.3,1.4,2.3,2.6,2.8
+          c1.8,1.1,3.7,1.2,5.6,0.6c1.9-0.7,4.8-2.6,8.6-5.8c3-2.3,4.9-4.1,5.7-5.3c0.8-1.2,1.3-2.6,1.3-4.2c0-3.8-2-6.2-6-7
+          c-3.7-0.7-6.7,1.6-8.9,7c-0.5,1.3-1.1,2.4-1.6,3.3c-0.5,0.9-0.9,1.4-1,1.4c-1,0-0.8-3,0.4-8.9c1.2-5.9,3-12.8,5.5-20.5l2.5-8
+          l2.9-1.4c3-1.6,8.4-5.9,16.2-12.9c7.9-7,16.9-15.7,27.2-25.9c4-4,7.1-7,9.3-9c2.2-2,4.4-3.5,6.5-4.7c2.2-1.2,5.2-2.6,9.2-4.3
+          c9.4-3.9,16.7-5.8,21.8-5.6c2.4,0.1,4.3,0.6,5.7,1.4c1.3,0.8,2.5,2.2,3.6,4.2c0.4,0.7,0.7,1.5,0.9,2.1c0.2,0.7,0.2,1.5,0.2,2.5
+          c0,1-0.1,2.4-0.2,4.2c-0.3,7.2-2.9,15.9-7.8,25.9c-8.2,16.9-20.1,34.4-35.7,52.5c-15.6,18.1-32.4,33.9-50.5,47.5
+          c-7.1,5.3-14.2,10.1-21.3,14.4c-7.1,4.3-13.2,7.5-18.1,9.5c-0.1,0-0.2,0.1-0.3,0.2c-2.4,1.1-4.2,1.8-5.3,2.1s-1.9,0.4-2.2,0.2
+          c-0.4-0.2-0.7-0.6-0.9-1.3c0-0.1-0.1-0.2-0.2-0.3c-1.2-2.5-2.8-4.1-5-4.5c-2.2-0.5-4.1-0.1-5.9,1.3c-1.8,1.3-2.6,3.5-2.6,6.4
+          c0,1.3,0.5,2.7,1.4,4.1c0.9,1.5,2,2.7,3.4,3.5c3.6,2.9,11.4,0.8,23.2-6.2c46.1-26.8,83.7-61.7,112.9-104.4
+          c14.7-22.2,22.1-39.9,22.1-53.2c0-3.5-0.4-6.3-1.2-8.4C827.3,182.2,825.9,180.2,824,178.2z M740.9,219.6
+          c-10.7,9.7-16.1,14.1-16.1,13.4c0-0.3,0.9-1.4,2.7-3.3c1.8-1.9,4-4,6.5-6.3c2.5-2.3,5-4.5,7.4-6.6c2.4-2.1,4.3-3.6,5.7-4.5
+          C751.5,209.3,749.4,211.8,740.9,219.6z" />
+        <path d="M1087.7,199.1c-1-1.8-2.5-2.7-4.8-2.7c-3.3,0-6,2.1-8.1,6.4c-2,3.5-5.9,7.4-11.5,11.8c-5.7,4.4-12.2,8.5-19.7,12.4
+          c-8.8,4.8-15,6.5-18.6,5.2c-3.6-1.3-6.4-7.1-8.3-17.3c-1.6-8.1-4.5-12.4-8.6-13.1c-1.6-0.2-3.8,0.4-6.7,1.8
+          c-2.9,1.4-5.9,3.5-9.2,6.1c-3.8,3.1-8,6.8-12.7,11.3c-4.6,4.5-8.4,8.3-11.4,11.6c-1.4,1.6-2.5,2.9-3.5,3.9c-1,1-1.5,1.5-1.6,1.5
+          c0-0.1,0.4-1,1.1-2.7c0.7-1.7,1.6-3.8,2.7-6.2c1.2-2.5,2.1-4.7,2.9-6.5c0.8-1.8,1.2-2.8,1.2-2.9c0-0.2,0.2-0.6,0.7-1.3
+          c0.5-0.6,1-1.3,1.7-2.1c1-1.2,1.9-2.4,2.5-3.7c0.5-0.4,0.9-0.6,1.2-0.7c2.1-1.3,3.2-3.7,3.2-7.2c0-1.2-0.2-2.4-0.6-3.7
+          c-0.9-2-2.3-3-4.3-3c-1,0-2.1,0.4-3.2,1.1c-0.5-0.1-0.9-0.1-1.4-0.1c-2.8,0-5,1.5-6.7,4.4c-1.7,2.9-2.1,6-1.1,9.2
+          c0.2,0.3,0.3,0.9,0.2,1.8c-0.1,0.6-0.3,1.4-0.6,2.5c-1.6,1.5-3.5,3.1-5.7,4.9C943.9,231.9,934.9,237,930,237
+          c-1.5,0-2.8-0.6-3.8-1.9c-1.5-1.7-2.2-4-2.2-6.8c0-4.2,1.1-9.8,3.2-16.7c1.1-3.4,2.2-5.9,3.5-7.5s1.9-4.2,1.9-7.8
+          c0-1.3-0.2-2.2-0.6-2.9c-2.8-4.1-6.9-6.2-12.4-6.2c-8.7,0-17.1,4.6-25.2,13.8c-4.3,5.8-6.5,11-6.5,15.6c0,1.7,0.3,3.3,0.8,4.8
+          c1.3,2.9,3.3,4.3,6,4.3c3,0,6.7-1.6,11.3-4.6c-6.3,7.8-13.8,15-22.5,21.7c-6,4.6-11,6.8-14.8,6.8c-2.5,0-4.2-0.8-5.1-2.5
+          c-0.7-1.3-1.2-6.6-1.4-16.1c-0.2-8.3-0.5-13.3-0.8-15c-0.6-2.9-2.3-5.5-4.9-7.8c-1.5-0.7-2.2-1.8-2.2-3.2c0-1,0.4-3,1.1-6.2
+          c0.6-1.9,1-4,1-6.4c0-5.2-2.1-8.5-6.4-10c-0.7-0.2-1.5-0.3-2.4-0.3c-2,0-4,0.7-6,2.2c-2.8,2.1-4.8,5.1-6,9.1c-0.6,2-1,3.9-1,5.6
+          c0,4.9,3.1,8.2,9.2,10c5.7,1.5,9.3,3.6,10.7,6.4c1.4,2.8,2.1,7.5,2.1,14.2l-0.2,7.2c0,7.1,0.9,11.9,2.7,14.3c2.2,3,5.5,4.5,9.9,4.5
+          c5.3,0,12.8-3.9,22.6-11.8c11.3-9,21.1-19.7,29.4-32.1c-1.6,6.4-2.4,11.7-2.4,16c0,6.7,2.2,11.2,6.7,13.5c1.1,0.5,2.6,0.8,4.6,0.8
+          c2.1,0,4.1-0.3,6-1c3.3-1,8.1-3.6,14.3-7.9c3.1-2.1,6.1-4.4,9.3-6.8c-0.1,0.2-0.1,0.3-0.2,0.5c-1.3,3.6-2.9,8.3-4.9,14.2
+          c-2.8,7.4-3.4,11.8-1.9,13.2c0.4,0.5,1.1,0.9,2.1,1c1,0.1,1.9-0.1,2.8-0.6c0.4-0.2,1.5-1.2,3.1-3.1c1.6-1.9,3.5-4.1,5.7-6.8
+          c4.3-5.1,8.9-10.1,13.8-15c4.8-4.9,9.2-9,13-12.2c2.9-2.2,5.7-4.3,8.4-6.1c2.7-1.9,4.4-2.8,5-2.8c1.2,0,2.5,3.2,4,9.7
+          c2,8.6,4.4,14.2,7.2,16.7c2.9,2.7,6,4,9.6,4c7.6,0,24.8-8.2,51.4-24.7c1.3-0.8,2.5-1.7,3.8-2.5c1.3-0.8,2.2-1.4,2.7-1.7
+          c2-1.3,3.2-3,3.7-5.1C1088.9,202.9,1088.7,200.9,1087.7,199.1z M845.7,196.1c-1.6,2.8-2.9,4.1-4,4.1c-0.4,0-0.6-0.4-0.6-1.3
+          c0-0.8,0.2-1.9,0.7-3.3c0.5-1.3,1.2-2.6,2.1-3.9s1.8-1.9,2.5-1.9c0.4,0,0.6,0.4,0.6,1.3C847.1,192.3,846.6,193.9,845.7,196.1z
+          M917.2,201c-1,2.1-4.1,5.6-9.6,10.3c-6.3,5.5-10.6,8.3-12.9,8.3c-1,0-1.4-0.6-1.4-1.8c0-1.4,0.6-3.4,1.8-6
+          c2.3-5.4,6.5-10.1,12.6-14c3-1.9,5.4-2.9,7.2-2.9c1.9,0,2.9,1,2.9,2.9C917.7,199.2,917.5,200.3,917.2,201z" />
+      </g>
     </svg>
+  </div>
 
-    <div class="content">
-      <div class="name" ref="name" >Liana V. Bran</div>
-      <div class="title" ref="title">Director of Expansion Strategy at Cara Colletive</div>
-      <p ref="paragraph">
-        <span class="english">Experienced program director with a demonstrated history of working in the nonprofit sector. Skilled in systems thinking; program development and implementation; community stakeholder and partner engagement. Strong social impact professional graduating from the University of Chicago Booth School of Business in Summer 2020.</span>
-      </p>
-    </div>
+  <div class="title" ref="title">Director of Expansion Strategy at Cara Colletive</div>
 
-    <div id="button-container">
-      <!-- <div id="form-ball" ref="formBall"></div> -->
-
-      <div id="bulb-container">
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb one"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb two"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb three"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb four"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb six"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb seven"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb eight"></div></div></div>
-        <div class="bulb-position"><div class="light-flicker"><div class="bulb nine"></div></div></div>
+  <div id="button-container-section">
+    <div class="button-container">
+      <div class="bulb-container">
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb one"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb two"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb three"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb four"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb six"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb seven"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb eight"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb nine"></div>
+          </div>
+        </div>
       </div>
 
       <div class="float-hide" ref="orbitable">
         <div class="bulb-orbit"></div>
-      </div>
-
-      <div id="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
-
         <svg fill="none">
-          <path id="path" d="M47.3,22.7c0,12.5-10.6,22.7-23.6,22.7c-6.6,0-12.6-2.6-16.9-6.9C2.6,34.4,0,28.8,0,22.7C0,10.2,10.6,0,23.6,0
-          S47.3,10.2,47.3,22.7z"/> </svg>
-          <span class="english">Hi!</span>
-        </div>
+          <path class="path" d="M47.3,22.7c0,12.5-10.6,22.7-23.6,22.7c-6.6,0-12.6-2.6-16.9-6.9C2.6,34.4,0,28.8,0,22.7C0,10.2,10.6,0,23.6,0
+            S47.3,10.2,47.3,22.7z" />
+        </svg>
+      </div>
 
-        <div id="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
-          <span class="english">Hi! I'm Liana I would love to hear from you.</span>
+      <div class="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
+
+        <span class="english">Drop Me An Email</span>
+      </div>
+
+      <div class="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
+        <span class="english">Hi! I'm Liana I would love to hear from you.</span>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="bulb-container">
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb one"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb two"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb three"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb four"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb six"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb seven"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb eight"></div>
+          </div>
+        </div>
+        <div class="bulb-position">
+          <div class="light-flicker">
+            <div class="bulb nine"></div>
+          </div>
         </div>
       </div>
 
-    </section>
-  </template>
-  <script>
-  import $ from 'jquery';
-  export default {
-    data () {
-      return {
-        y: 0,
-        store: {
-          pX: 0,
-          pY: 0,
-          nX: 0,
-          nY: 0,
-        }
-      };
-    },
-    watch: {
-      position: function(oldVal, newVal) {
-        this.$data.y = newVal;
-        this.$ScrollTrigger.update();
+      <div class="float-hide" ref="orbitable">
+        <div class="bulb-orbit"></div>
+        <svg fill="none">
+          <path class="path" d="M47.3,22.7c0,12.5-10.6,22.7-23.6,22.7c-6.6,0-12.6-2.6-16.9-6.9C2.6,34.4,0,28.8,0,22.7C0,10.2,10.6,0,23.6,0
+            S47.3,10.2,47.3,22.7z" />
+        </svg>
+      </div>
+
+      <div class="small-btn" ref="smallBtn" @mouseleave="ballleave" @mouseover="ballover">
+
+
+        <span class="english">Schedule a Meeting</span>
+      </div>
+
+      <div class="btn" ref="btn" @mouseleave="ballleave" @mouseover="ballover">
+        <span class="english">Lets make it happen!</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</template>
+<script>
+import $ from 'jquery';
+export default {
+  data() {
+    return {
+      y: 0,
+      store: {
+        pX: 0,
+        pY: 0,
+        nX: 0,
+        nY: 0,
       }
+    };
+  },
+  watch: {
+    position: function(oldVal, newVal) {
+      this.$data.y = newVal;
+      this.$ScrollTrigger.update();
+    }
+  },
+  computed: {
+    position: function() {
+      return this.$store.state.locomotive.scroll.y
+    }
+  },
+  methods: {
+    ballover: function() {
+      this.btnTween.play()
     },
-    computed: {
-      position: function() {
-        return this.$store.state.locomotive.scroll.y
-      }
+    ballleave: function() {
+      this.btnTween.reverse()
     },
-    methods: {
-      ballover: function() {
-        this.btnTween.play()
+  },
+  mounted: function() {
+    const Splitting = require('splitting');
+    const titleConvert = Splitting({
+      target: this.$refs.title,
+      by: 'chars'
+    });
+    const title = titleConvert[0].chars;
+    this.container = document.querySelector('.js-locomotive .scroll');
+    const _this = this;
+    const bulbsPosition = [...document.querySelectorAll('.bulb-container .bulb-position')];
+    const bulbs = [...document.querySelectorAll('.bulb-container .bulb')];
+    const formBall = document.querySelector(".bulb-orbit");
+    const press = document.querySelector(".btn");
+
+    this.$ScrollTrigger.scrollerProxy(_this.container, {
+      scrollTop(value) {
+        return arguments.length ? _this.container.scrollTo(value, 0, 0) : _this.$data.y;
       },
-      ballleave: function() {
-        this.btnTween.reverse()
-      },
-    },
-    mounted: function () {
-      const Splitting = require('splitting');
-      const titleConvert = Splitting({ target: this.$refs.title, by: 'chars' });
-      const paragraphConvert = Splitting({ target: this.$refs.paragraph.children[0], by: 'chars' });
-
-      const title= titleConvert[0].chars;
-      const paragraph = paragraphConvert[0].chars;
-
-
-      const bulbsPosition = [...document.querySelectorAll('#bulb-container .bulb-position')];
-      const bulbs = [...document.querySelectorAll('#bulb-container .bulb')];
-
-      const formBall = document.querySelector(".bulb-orbit");
-      const press = document.querySelector("#btn");
-      // press.addEventListener('click', () => {
-      //   this.ballTwoTween.pause();
-      // })
-      this.container = document.querySelector('.js-locomotive .scroll');
-      const _this = this;
-
-      this.$ScrollTrigger.scrollerProxy(_this.container, {
-        scrollTop(value) {
-          return arguments.length ? _this.container.scrollTo(value, 0, 0) : _this.$data.y;
-        },
-        getBoundingClientRect() {
-          return {
-            top: 0,
-            left: 0,
-            width: window.innerWidth,
-            height: window.innerHeight
-          };
-        }
-      });
-
-      this.floatingaround = this.$gsap.timeline({ repeat: -1})
-
-      let options = {
-        duration: 1.5,
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
       }
+    });
+    let options = {
+      duration: 1.5,
+    }
 
-      this.interoTween = this.$gsap.timeline({id: 'intro'});
+    this.interoTween = this.$gsap.timeline({
+      id: 'intro'
+    });
 
-      this.interoTween
-      .set(this.$refs.logo, {
-        x: 0,
-        y: 5,
-        scale: 0.9,
-        opacity: 0,
-        rotateY: '-15deg',
-      })
-      .set(this.$refs.name, {
+    this.interoTween
+      .set('#name', {
         x: 0,
         y: 5,
         filter: 'blur(115px)',
-        opacity: 0,
+        // opacity: 0,
       })
       .set(title, {
-        x: 20,
-        y: 0,
-        opacity: 0,
-      })
-      .set(paragraph, {
         x: 20,
         y: 0,
         opacity: 0,
@@ -163,72 +340,48 @@
       .set(bulbsPosition, {
         x: 20,
         y: 5,
-        scale: 3.1,
-        opacity: 0,
-        rotate: '-145deg',
+        scale: 1.1,
+        opacity: 1,
+        rotate: '-140deg',
       })
       .set(this.$refs.smallBtn, {
         x: 20,
         y: 0,
         opacity: 0,
-      })
-      .to(this.$refs.logo, {
-        x: 0,
-        y: 0,
-        rotateY: '0deg',
-        scale: 1,
-        ease:"expo.out",
-        opacity: 0.3,
-        duration: 1.8,
-        delay: 1.4,
-        stagger: (i) => {
-          return i * 0.04
-        }
-      },'<')
-      .to(this.$refs.name, {
+      }, '<')
+      .to('#name', {
         x: 0,
         y: 0,
         rotateY: '0deg',
         scale: 1,
         filter: 'blur(0px)',
-        ease:"expo.out",
+        ease: "expo.out",
         opacity: 1,
         duration: 1.8,
-      },'<')
+      }, '<')
       .to(title, {
         x: 0,
         y: 0,
-        ease:"expo.out",
+        ease: "expo.out",
         opacity: 1,
         duration: 1.8,
-      },'<+0.3')
-      .to(paragraph, {
-        x: 0,
-        y: 0,
-        ease:"expo.out",
-        opacity: 1,
-        duration: 1,
-        stagger: (i) => {
-          return i * 0.002
-        }
-      },'<+0.5')
+      }, '<+0.3')
       .to(this.$refs.smallBtn, {
         x: 0,
         y: 0,
-        ease:"expo.out",
+        ease: "expo.out",
         opacity: 1,
         duration: 1,
-      },'<+0.5')
+      }, '<+0.5')
       .to(this.$refs.orbitable, {
         x: 0,
         y: 0,
         scale: 1,
-        ease:"expo.out",
+        ease: "expo.out",
         opacity: 1,
         duration: 1,
-      },'<+0.5')
-
-      .to(bulbsPosition , {
+      }, '<+0.5')
+      .to(bulbsPosition, {
         scale: 1,
         x: 0,
         y: 0,
@@ -255,91 +408,84 @@
         //     y: this.store.pY,
         //   })
         // }
-      },'<-1.5')
-      .to(formBall, {
-        opacity: 1,
-        duration: 1,
-      })
+      }, '<')
 
-      /// Btn
-      this.btnTween = this.$gsap.timeline( { paused: true} );
+    this.btnTween = this.$gsap.timeline({
+      paused: true
+    });
 
-      this.btnTween
-      .to('.light-flicker', {
-        x: 0,
-        y: 0,
-        rotate: 0,
-        ease:"expo.in",
-        duration: 0,
-        ease: "power4.inOut",
-      })
-      .to(bulbs, {
-        x: (i) => { return i * 20 },
-        y: 10,
-        filter: 'blur(0px)',
-        ease: "power4.inOut",
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        stagger: (i) => { return i * 0.004}
-      },'<-0.2')
-      .to(this.$refs.orbitable, {
-        opacity: 0,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: 1,
-        ease: "power4.inOut",
-      },'<')
-      .to(this.$refs.btn, {
-        opacity: 1,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: options.duration,
-        ease: "power4.inOut",
-      },'<')
-      .to(this.$refs.btn, {
-        opacity: 1,
-        scale: 1,
-        filter: 'blur(0px)',
-        duration: options.duration,
-        ease: "power4.inOut",
-      },'<')
-      .to(this.$refs.smallBtn, {
-        scale:  1,
-        opacity: 1,
-        duration: 3,
-        backgroundColor: '#b7894a',
-        ease: "power4.inOut",
-      },'<')
+    // this.btnTween
+    //   .to('.light-flicker', {
+    //     x: 0,
+    //     y: 0,
+    //     rotate: 0,
+    //     ease: "expo.in",
+    //     duration: 0,
+    //     ease: "power4.inOut",
+    //   })
+    //   .to(bulbs, {
+    //     x: (i) => {
+    //       return i * 20
+    //     },
+    //     y: 10,
+    //     filter: 'blur(0px)',
+    //     ease: "power4.inOut",
+    //     opacity: 1,
+    //     scale: 1,
+    //     duration: 1,
+    //     stagger: (i) => {
+    //       return i * 0.004
+    //     }
+    //   }, '<-0.2')
+    //   .to(this.$refs.orbitable, {
+    //     opacity: 0,
+    //     scale: 1,
+    //     filter: 'blur(0px)',
+    //     duration: 1,
+    //     ease: "power4.inOut",
+    //   }, '<')
+    //   .to(this.$refs.btn, {
+    //     opacity: 1,
+    //     scale: 1,
+    //     filter: 'blur(0px)',
+    //     duration: options.duration,
+    //     ease: "power4.inOut",
+    //   }, '<')
+    //   .to(this.$refs.btn, {
+    //     opacity: 1,
+    //     scale: 1,
+    //     filter: 'blur(0px)',
+    //     duration: options.duration,
+    //     ease: "power4.inOut",
+    //   }, '<')
+    //   .to(this.$refs.smallBtn, {
+    //     scale: 1,
+    //     opacity: 1,
+    //     duration: 3,
+    //     backgroundColor: '#b7894a',
+    //     ease: "power4.inOut",
+    //   }, '<')
 
-      //
-      // this.$GSDevTools.create({
-      //   animation: 'intro'
-      // });
-      // Btn Orbit Ball
-      this.ballTwoTween = this.$gsap.timeline();
+    const bulbOrbit = this.$gsap.utils.toArray('.float-hide');
 
-      this.ballTwoTween.to(".bulb-orbit", {
+    bulbOrbit.forEach(orbit => {
+      this.$gsap.to(orbit, {
         duration: 11,
         repeat: -1,
-        repeatDelay: 0,
+        delay: 0,
         ease: "linear",
-        motionPath:{
-          path: "#path",
-          align: "#path",
+        motionPath: {
+          path: orbit.querySelector('.path'),
+          align: orbit.querySelector('.path'),
           autoRotate: false,
           alignOrigin: [0.5, 0.5]
         }
       });
+    });
+  },
+  beforeDestroy: function() {}
+};
+</script>
 
-      // press.addEventListener('click', () => {
-      //   this.ballTwoTween.pause();
-      // })
-    },
-    beforeDestroy: function () {
-    }
-  };
-  </script>
-
-  <style lang="scss" scoped>
-  </style>
+<style lang="scss" scoped>
+</style>

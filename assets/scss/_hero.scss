@@ -10,86 +10,49 @@
 }
 
 #hero {
-  > .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-  }
-
-
-  #about-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 972px;
-    perspective: 1000px;
-
-    #logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('/img/logo.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.5;
-      transform: scale(0.7)
-    }
-
-    .content {
-      position: relative;
-      z-index: 333;
-      perspective: 1000px;
-    }
-
-
-    .name {
-      font-size: em(227);
-      font-family: "StephenGillion DEMO";
-      color: $gold;
-      line-height: 1;
-      will-change: transform;
-    }
-
-    .title {
-      font-weight: 400;
-      line-height: 53px;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      font-family: "pulp display";
-      font-size: 37px;
-
-    }
-
-    p {
-      position: relative;
-      font-size: 1.625em;
-      line-height: 36px;
-      letter-spacing: 2px;
-      font-family: "pulp display";
-      margin-bottom: 40px;
-      font-weight: 300;
-
-      margin-bottom: 40px;
-
-      .word {
-        line-height: inherit;
-        font-size: inherit;
-        display: inline-block;
-        overflow: hidden;
-
-        .char {
-          display: inline-block;
-          will-change: transform;
-          vertical-align: text-top;
-        }
-      }
-    }
-  }
+  // #about-section {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: flex-start;
+  //
+  //   #logo {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background-image: url("/img/logo.png");
+  //     background-size: contain;
+  //     background-repeat: no-repeat;
+  //     opacity: 0.5;
+  //     transform: scale(0.7);
+  //   }
+  //
+  //   p {
+  //     position: relative;
+  //     margin-bottom: 40px;
+  //     font-family: "pulp display";
+  //     font-size: 31px;
+  //     font-weight: 300;
+  //     line-height: 36px;
+  //     letter-spacing: 2px;
+  //     text-shadow: #04152c 6px 2px 7px;
+  //
+  //     .word {
+  //       line-height: inherit;
+  //       font-size: inherit;
+  //       display: inline-block;
+  //       overflow: hidden;
+  //
+  //       .char {
+  //         display: inline-block;
+  //         will-change: transform;
+  //         vertical-align: text-top;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 #form-section {
@@ -98,22 +61,11 @@
   right: 0;
   width: 100%;
   height: 100%;
-      background-color: #0620434d;
-      opacity: 0;
-
-      pointer-events: none;
-
-          // &:before {
-          //   content: "";
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   width: 100%;
-          //   height: 100%;
-          //
-          //   backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
-          // }
+  background-color: #0620434d;
+  opacity: 0;
+  pointer-events: none;
 }
+
 #form-container {
   position: absolute;
   top: 0;
@@ -121,19 +73,16 @@
   width: 100%;
   height: 100%;
   max-height: 855px;
-    max-width: 845px;
+  max-width: 845px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('/img/formbg.png');
-  perspective: 1000px;
+  background-image: url("/img/formbg.png");
   opacity: 0;
 
   h2 {
     font-size: 32px;
     font-weight: bold;
   }
-
-
 
   #cloud-one,
   #cloud-two {
@@ -142,13 +91,14 @@
     background-repeat: no-repeat;
     mix-blend-mode: hard-light;
   }
+
   #cloud-one {
     top: -160px;
-      width: 500px;
-      height: 285px;
-      left: -110px;
-    background-image: url('/img/cloudone.png');
-        mix-blend-mode: exclusion;
+    width: 500px;
+    height: 285px;
+    left: -110px;
+    background-image: url("/img/cloudone.png");
+    mix-blend-mode: exclusion;
   }
 
   #cloud-two {
@@ -156,14 +106,13 @@
     right: -80px;
     width: 70%;
     height: 350px;
-    background-image: url('/img/cloudtwo.png');
+    background-image: url("/img/cloudtwo.png");
   }
 }
 
 #location {
   height: 100vh;
 }
-
 
 #svg-mask {
   position: absolute;
@@ -176,6 +125,6 @@
   overflow: visible;
 }
 
-#center{
+#center {
   visibility: hidden;
 }

@@ -1,9 +1,9 @@
-html,
-body {
+body,
+html {
   height: 100%;
-  background-color: #313131;
+  background-color: #0d2746;
   color: white;
-  font-family: "plup display";
+  font-family: "pulp display";
 }
 
 * {
@@ -18,18 +18,22 @@ body {
   font-size: 16px;
 }
 
-::selection { background: transparent; }
-::-moz-selection { background: transparent; }
+::selection {
+  background: transparent;
+}
+
+::-moz-selection {
+  background: transparent;
+}
 
 #app {
   position: relative;
   overflow: hidden;
   height: 100%;
   width: 100%;
-  background-image: url('/img/bg.jpg');
+  background-image: url("/img/bg.jpg");
   background-size: cover;
 }
-
 
 .container {
   position: relative;
@@ -46,32 +50,30 @@ h6 {
   font-weight: 300;
 }
 
-h1 {
-}
+h1 {}
 
 h2 {
   text-transform: none;
   will-change: transform;
 }
 
-h3 {
+h3 {}
 
-}
+h4 {}
 
-h4 {
-}
-
-p {
-}
+p {}
 
 ul {
   margin: 0;
+
   li {
     list-style: none;
   }
 }
 
-
+#hide-svg {
+  display: none;
+}
 @for $i from 1 through 200 {
   .dot:nth-child(#{$i}) {
     width: 1px + $i/7;

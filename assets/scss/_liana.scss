@@ -1,37 +1,93 @@
+svg#name {
+  position: relative;
+  fill: $gold;
+  width: 81%;
+}
+
+#name-container {
+  position: relative;
+  margin-bottom: 10px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 17px;
+    left: 18px;
+    height: 13px;
+    width: 289px;
+    background-image: url("/img/signatureline.png");
+    background-size: COVER;
+    background-repeat: no-repeat;
+    transform: rotate(359deg);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 333;
+  // perspective: 1000px;
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+  width: 490px;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 43px;
+  letter-spacing: 1px;
+  font-family: Baskerville;
+  margin-bottom: 55px;
+  text-shadow: #04172c73 6px 2px 7px;
+  // &:before {
+  //   content: '';
+  //   top: 0;
+  //   left: 0;
+  //   position: absolute;
+  //   background-color: #071f3d;
+  //   filter: blur(21px);
+  //   width: 95%;
+  //   height: 40px;
+  //   z-index: -1;
+  // }
+}
+
 #liana-section {
   display: flex;
   flex-direction: row;
-  align-items: center;
   position: relative;
-  left: -340px;
-  height: 1252px;
-  width: 1000px;
+  top: 0;
+  height: 100VH;
 
   #liana-container {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
-    width: 100%;
+    min-width: 1010px;
+    width: 52%;
+    max-width: 1210px;
+    margin: auto;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('/img/paintstain.png');
+    background-image: url("/img/paintstain.png");
     background-position: center;
     will-change: transform;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   #mask-container {
     width: 100%;
-    mask-border: url('/img/mask.svg');
+    mask-border: url("/img/mask.svg");
 
     &:before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0px;
+      left: 0;
       height: 100%;
       width: 100%;
-      box-shadow: inset 0em 1em 250px 100px #0a2441;
+      box-shadow: inset 0 1em 250px 100px #0a2441;
       will-change: transform;
       border-radius: 20%;
     }
@@ -57,7 +113,7 @@
           bottom: -36%;
 
           .paint-dot {
-            background-image: url('/img/dots.png');
+            background-image: url("/img/dots.png");
             left: -137px;
             bottom: -36%;
           }
@@ -65,33 +121,37 @@
 
         &:nth-child(2) {
           right: 0;
-          bottom: 0%;
+          bottom: 0;
+
           .paint-dot {
-            background-image: url('/img/dots.png');
+            background-image: url("/img/dots.png");
             right: 0;
-            bottom: 0%;
+            bottom: 0;
           }
         }
 
         &:nth-child(3) {
           right: -80px;
           bottom: -50%;
+
           .paint-dot {
-            background-image: url('/img/dots2.png');
+            background-image: url("/img/dots2.png");
             right: -80px;
             bottom: -50%;
           }
         }
 
         &:nth-child(4) {
-          left: 0px;
+          left: 0;
           top: 34%;
+
           .paint-dot {
-            background-image: url('/img/dots.png');
+            background-image: url("/img/dots.png");
             right: 0;
-            bottom: 0%;
+            bottom: 0;
           }
         }
+
         .paint-dot {
           height: 100%;
           width: 100%;
@@ -109,9 +169,9 @@
     #liana {
       position: relative;
       z-index: 3;
-      height: 844px;
-      width: 513px;
-      background-image: url('/img/liana.png');
+      height: 1000px;
+      width: 100%;
+      background-image: url("/img/liana.png");
       background-size: cover;
       background-repeat: no-repeat;
 
@@ -128,16 +188,13 @@
       }
     }
   }
-
   @function multiple-box-shadow ($n) {
     $value: '#{random(4000)}px #{random(4000)}px #FFF';
     @for $i from 2 through $n {
       $value: '#{$value} , #{random(4000)}px #{random(4000)}px #FFF';
     }
-
     @return unquote($value);
   }
-
   $shadows-small: multiple-box-shadow(700);
   $shadows-medium: multiple-box-shadow(200);
   $shadows-big: multiple-box-shadow(100);
@@ -145,7 +202,7 @@
 
   #star-container {
     position: absolute;
-    top: 0%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -153,7 +210,7 @@
     #stars,
     #stars2,
     #stars3,
-    #stars4{
+    #stars4 {
       filter: blur(1px);
       position: relative;
     }
@@ -164,8 +221,6 @@
       background: transparent;
       box-shadow: $shadows-small;
       animation: animStar 250s linear infinite;
-
-
     }
 
     #stars2 {
@@ -191,11 +246,11 @@
       box-shadow: $shadows-bigger;
       animation: animStar 150s linear infinite;
     }
-
     @keyframes animStar {
       from {
         transform: translateY(0px);
       }
+
       to {
         transform: translateY(-2000px);
       }
